@@ -17,6 +17,16 @@ import {
   export class UsersController {
     constructor(private usersService: UsersService) {}
 
+    @Get('noti')
+    async Pushnoti() {
+      const reuslt =  await this.usersService.Pushnoti();
+      return {
+        statusCode: HttpStatus.OK,
+        message: 'Gửi Noti Thành Công',
+        reuslt
+      };
+    }
+
     @Get()
     async showAllUsers() {
       const users =  await this.usersService.showAll();

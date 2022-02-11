@@ -12,6 +12,30 @@ import * as bcrypt from 'bcrypt';
         private usersRepository: Repository<UsersEntity>,
       ) {}
 
+      async Pushnoti() {
+        const PushNotifications = require('@pusher/push-notifications-server');
+          let beamsClient = new PushNotifications({
+            instanceId: '6a682eeb-8cd5-4f39-b3dc-b0cf5857881f',
+            secretKey: '72850F07C0DFC7CA741A2F720AA44139610DC45D52EFFE12F6E47E407D551792'
+          });         
+         return beamsClient
+            .publishToInterests(["hello"], {
+              web: {
+                notification: {
+                  title: "Test Noti Popup",
+                  body: "Xin lỗi vì sự bất tiện này. Đây là tin nhắn test. Vui lòng bỏ qua.",
+                  deep_link: "https://www.tazagroup.vn",
+                },
+              },
+            })
+            .then((publishResponse) => {
+              console.log("Just published:", publishResponse.publishId);
+            })
+            .catch((error) => {
+              console.log("Error:", error);
+            });
+      }
+      
       async showAll() {
         return await this.usersRepository.find();
       }
