@@ -32,7 +32,16 @@ export class AuthService {
         return this.login(user);
         //return user;
       }
-    
+      async validateUser(email: string, password: string): Promise<any> {
+        const user = await this.usersService.findByEmail(email);
+        const check = await this.comparePassword(password, user.password);
+        if (user && check) {
+          const { password, ...result } = user;
+          return result;
+        }
+        return null;
+      }
+
       async login(user: any) {
         const payload:any = {
           name: user.name,
