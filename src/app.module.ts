@@ -9,11 +9,11 @@ import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [TypeOrmModule.forRoot({
     type: 'mysql',
-    host: '45.252.250.11',
+    host: 'localhost',
     port: 3306,
-    username: 'owtrjssx_chikiet8',
-    password: '@hikiet88',
-    database: 'owtrjssx_tazagroup.vn',
+    username: 'tazaspac_chikiet',
+    password: '@Hikiet88',
+    database: 'tazaspac_v2tazagroup',
     autoLoadEntities: true,
     synchronize: false,
     migrationsRun: false
