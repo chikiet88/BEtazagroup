@@ -12,7 +12,7 @@ export class AuthController {
     //@UseGuards(LocalAuthGuard)
     @Post('login')
     async login(@Body() data: UsersDTO) {
-        const result = await this.authService.authentication(data.email,data.password);   
+        const result = await this.authService.authentication(data.SDT,data.password);   
    //  return this.authService.authentication(data.email,data.password);
    //return result;
      return {

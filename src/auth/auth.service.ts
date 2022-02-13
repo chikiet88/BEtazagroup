@@ -23,8 +23,8 @@ export class AuthService {
         return await bcrypt.compare(password, storePasswordHash);
       }
     
-      async authentication(email: string, password: string): Promise<any> {
-        const user = await this.usersService.findByEmail(email);
+      async authentication(SDT: string, password: string): Promise<any> {
+        const user = await this.usersService.findBySDT(SDT);
         const check = await this.comparePassword(password, user.password);
         if (!user || !check) {
           return false;
@@ -44,10 +44,9 @@ export class AuthService {
 
       async login(user: any) {
         const payload:any = {
-          name: user.name,
+          SDT: user.SDT,
           email: user.email,
         };
       return { access_token: this.jwtService.sign(payload),user };
       }
-
 }

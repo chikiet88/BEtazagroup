@@ -13,7 +13,7 @@ import { JwtStrategy } from './jwt.strategy';
   imports: [TypeOrmModule.forFeature([UsersEntity]),UsersModule,PassportModule,   
   JwtModule.register({
     secret: 'tazagroup.vn',
-    signOptions: { expiresIn: '3600s' },
+    signOptions: { expiresIn: '30d' },
   }),],
   providers: [AuthService,UsersService,LocalStrategy,JwtStrategy],
   controllers: [AuthController],

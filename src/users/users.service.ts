@@ -57,6 +57,13 @@ import * as bcrypt from 'bcrypt';
           },
         });
       }
+      async findBySDT(SDT: string): Promise<UsersDTO> {
+         return await this.usersRepository.findOne({
+          where: {
+            SDT: SDT,
+          },
+        });
+      }
 
       async read(id: number) {
         return await this.usersRepository.findOne({ where: { id: id } });

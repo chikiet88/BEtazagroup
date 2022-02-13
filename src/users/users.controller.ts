@@ -39,18 +39,25 @@ import {
 
     @Post()
     async createUsers(@Body() data: UsersDTO) {
-      const check = await this.validate(data.email);
+      const check = await this.validateSDT(data.SDT);
       if (check) {
         return {
           statusCode: HttpStatus.BAD_REQUEST,
-          message: 'User already exists',
+          message: 'Số Điện Thoại Đã Tồn Tại',
         };
       }
+      const check1 = await this.validateEmail(data.email);
+      if (check1) {
+        return {
+          statusCode: HttpStatus.BAD_REQUEST,
+          message: 'Email Đã Tồn Tại',
+        };
+      }    
       data.password = await this.usersService.setPassword(data.password);
       const user = await this.usersService.create(data);
       return {
         statusCode: HttpStatus.OK,
-        message: 'User created successfully',
+        message: 'Tạo User Thành Công',
         user
       };
     }
@@ -83,12 +90,20 @@ import {
       };
     }
 
-    async validate(email: string) {
+    async validateSDT(SDT: string) {
       try {
-        const users = await this.usersService.findByEmail(email);
-        return users;
+        const user = await this.usersService.findBySDT(SDT);
+        return user;
       } catch (e) {
         return false;
       }
     }  
+    async validateEmail(email: string) {
+      try {
+       const user = await this.usersService.findByEmail(email);
+        return user;
+      } catch (e) {
+        return false;
+      }
+    }     
   }
