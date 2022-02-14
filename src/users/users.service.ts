@@ -18,7 +18,7 @@ import * as bcrypt from 'bcrypt';
           let beamsClient = new PushNotifications({
             instanceId: '6a682eeb-8cd5-4f39-b3dc-b0cf5857881f',
             secretKey: '72850F07C0DFC7CA741A2F720AA44139610DC45D52EFFE12F6E47E407D551792'
-          });       
+          });    
          return beamsClient
             .publishToInterests([`idUser_${data.idUser}`], {
               // web: {
