@@ -12,14 +12,15 @@ import {
 
   import { UsersService } from './users.service';
   import { UsersDTO } from './users.dto';
+import { NotiDTO } from './noti.dto';
 
   @Controller('users')
   export class UsersController {
     constructor(private usersService: UsersService) {}
 
-    @Get('noti')
-    async Pushnoti() {
-      const reuslt =  await this.usersService.Pushnoti();
+    @Post('noti')
+    async Pushnoti(@Body() data: NotiDTO) {
+      const reuslt =  await this.usersService.Pushnoti(data);
       return {
         statusCode: HttpStatus.OK,
         message: 'Gửi Noti Thành Công',

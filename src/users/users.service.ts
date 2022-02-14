@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { UsersEntity } from './users.entity';
 import { UsersDTO } from './users.dto';
+import { NotiDTO } from './noti.dto';
 import * as bcrypt from 'bcrypt';
     @Injectable()
     export class UsersService {
@@ -12,19 +13,26 @@ import * as bcrypt from 'bcrypt';
         private usersRepository: Repository<UsersEntity>,
       ) {}
 
-      async Pushnoti() {
+      async Pushnoti(data: NotiDTO) {
         const PushNotifications = require('@pusher/push-notifications-server');
           let beamsClient = new PushNotifications({
             instanceId: '6a682eeb-8cd5-4f39-b3dc-b0cf5857881f',
             secretKey: '72850F07C0DFC7CA741A2F720AA44139610DC45D52EFFE12F6E47E407D551792'
-          });         
+          });       
          return beamsClient
-            .publishToInterests(["hello"], {
+            .publishToInterests([`idUser_${data.idUser}`], {
+              // web: {
+              //   notification: {
+              //     title: "Test Noti Popup",
+              //     body: "Xin lỗi vì sự bất tiện này. Đây là tin nhắn test. Vui lòng bỏ qua.",
+              //     deep_link: "https://www.tazagroup.vn",
+              //   },
               web: {
                 notification: {
-                  title: "Test Noti Popup",
-                  body: "Xin lỗi vì sự bất tiện này. Đây là tin nhắn test. Vui lòng bỏ qua.",
-                  deep_link: "https://www.tazagroup.vn",
+                  title: data.title,
+                  body: data.body,
+                  icon:"https://tazagroup.vn/templates/tazagroup/images/logo-white.png",
+                  deep_link: data.link,
                 },
               },
             })
