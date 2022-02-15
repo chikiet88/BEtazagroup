@@ -7,7 +7,6 @@ import { NotiDTO } from './noti.dto';
 import * as bcrypt from 'bcrypt';
     @Injectable()
     export class UsersService {
-      [x: string]: any;
       constructor(
         @InjectRepository(UsersEntity)
         private usersRepository: Repository<UsersEntity>,
