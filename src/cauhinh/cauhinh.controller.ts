@@ -35,7 +35,11 @@ export class CauhinhController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.cauhinhService.remove(+id);
+  async remove(@Param('id') id: string) {
+    await this.cauhinhService.remove(+id);
+    return {
+      statusCode: HttpStatus.OK,
+      message: 'Xóa Thành Công',
+    };
   }
 }
