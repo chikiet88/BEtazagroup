@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CauhinhModule } from './cauhinh/cauhinh.module';
+import { TuyendungModule } from './tuyendung/tuyendung.module';
 
 @Module({
   imports: 
@@ -19,7 +20,7 @@ import { CauhinhModule } from './cauhinh/cauhinh.module';
     autoLoadEntities: true,
     synchronize: true,
     migrationsRun: true
-  }), UsersModule, AuthModule, CauhinhModule],
+  }), UsersModule, AuthModule, CauhinhModule, TuyendungModule],
   controllers: [AppController],
   providers: [AppService],
 })

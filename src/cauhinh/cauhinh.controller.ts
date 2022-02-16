@@ -8,13 +8,13 @@ export class CauhinhController {
   constructor(private readonly cauhinhService: CauhinhService) {}
 
   @Post()
-  async create(@Body() createCauhinhDto: CreateCauhinhDto) {
-    const check = await this.cauhinhService.create(createCauhinhDto);
-    if (check) {
+  async create(@Body() CreateCauhinhDto: CreateCauhinhDto) {;
+    const result = await this.cauhinhService.create(CreateCauhinhDto);
+    if (result) {
       return {
         statusCode: HttpStatus.OK,
         message: 'Tạo Mới Thành Công',
-        check
+        result
     }
   }
 }
