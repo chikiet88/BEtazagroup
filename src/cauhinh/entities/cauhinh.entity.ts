@@ -5,8 +5,8 @@ export class CauhinhsEntity {
     id: number;
     @Column({collation: "utf8_general_ci"})
     title: string;
-    @Column({collation: "utf8_general_ci",type:"simple-array"})
-    data: [];
+    @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
+    detail:{};
     @Column()
     Trangthai: number;
     @Column()

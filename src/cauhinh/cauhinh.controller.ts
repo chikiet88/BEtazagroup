@@ -9,31 +9,27 @@ export class CauhinhController {
 
   @Post()
   async create(@Body() createCauhinhDto: CreateCauhinhDto) {
-    const check = await this.cauhinhService.create(createCauhinhDto);
-    if (check) {
+    const data = await this.cauhinhService.create(createCauhinhDto);
+    if (data) {
       return {
         statusCode: HttpStatus.OK,
         message: 'Tạo Mới Thành Công',
-        check
+        data
     }
   }
 }
-
   @Get()
   findAll() {
     return this.cauhinhService.findAll();
   }
-
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.cauhinhService.findOne(+id);
   }
-
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateCauhinhDto: UpdateCauhinhDto) {
     return this.cauhinhService.update(+id, updateCauhinhDto);
   }
-
   @Delete(':id')
   async remove(@Param('id') id: string) {
     await this.cauhinhService.remove(+id);
