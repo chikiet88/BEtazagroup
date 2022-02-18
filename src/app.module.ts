@@ -5,7 +5,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CauhinhModule } from './cauhinh/cauhinh.module';
-import { TuyendungModule } from './tuyendung/tuyendung.module';
+import { VetuyendungModule } from './vetuyendung/vetuyendung.module';
 
 @Module({
   imports: 
@@ -19,7 +19,7 @@ import { TuyendungModule } from './tuyendung/tuyendung.module';
     autoLoadEntities: true,
     synchronize: true,
     migrationsRun: true
-  }), UsersModule, AuthModule, CauhinhModule, TuyendungModule],
+  }), UsersModule, AuthModule, CauhinhModule, VetuyendungModule],
   controllers: [AppController],
   providers: [AppService],
 })
