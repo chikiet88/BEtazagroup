@@ -72,15 +72,15 @@ import * as bcrypt from 'bcrypt';
         });
       }
 
-      async read(id: number) {
+      async read(id: string) {
         return await this.usersRepository.findOne({ where: { id: id } });
       }
 
-      async update(id: number, data: Partial<UsersDTO>) {
+      async update(id: string, data: Partial<UsersDTO>) {
         await this.usersRepository.update({ id }, data);
         return await this.usersRepository.findOne({ id });
       }
-      async destroy(id: number) {
+      async destroy(id: string) {
         await this.usersRepository.delete({ id });
         return { deleted: true };
       }

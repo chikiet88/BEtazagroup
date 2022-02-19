@@ -21,16 +21,16 @@ export class CauhinhService {
     return await this.CauhinhsRepository.find();
   }
 
-  async findOne(id: number) {
+  async findOne(id: string) {
     return await this.CauhinhsRepository.findOne({ where: { id: id } });
   }
 
-  async update(id: number, updateCauhinhDto: UpdateCauhinhDto) {
+  async update(id: string, updateCauhinhDto: UpdateCauhinhDto) {
     await this.CauhinhsRepository.update(id, updateCauhinhDto);
     return await this.CauhinhsRepository.findOne({ where: { id: id } });
   }
 
-  async remove(id: number) {
+  async remove(id: string) {
     await this.CauhinhsRepository.delete(id);
     return { deleted: true };
   }

@@ -64,7 +64,7 @@ import { NotiDTO } from './noti.dto';
     }
 
     @Get(':id')
-    async readUser(@Param('id') id: number) {
+    async readUser(@Param('id') id: string) {
       const data =  await this.usersService.read(id);
       return {
         statusCode: HttpStatus.OK,
@@ -74,7 +74,7 @@ import { NotiDTO } from './noti.dto';
     }
 
     @Patch(':id')
-    async uppdateUser(@Param('id') id: number, @Body() data: Partial<UsersDTO>) {
+    async uppdateUser(@Param('id') id: string, @Body() data: Partial<UsersDTO>) {
       await this.usersService.update(id, data);
       return {
         statusCode: HttpStatus.OK,
@@ -83,7 +83,7 @@ import { NotiDTO } from './noti.dto';
     }
 
     @Delete(':id')
-    async deleteUser(@Param('id') id: number) {
+    async deleteUser(@Param('id') id: string) {
       await this.usersService.destroy(id);
       return {
         statusCode: HttpStatus.OK,

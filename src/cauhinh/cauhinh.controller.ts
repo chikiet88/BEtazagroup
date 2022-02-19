@@ -24,15 +24,15 @@ export class CauhinhController {
   }
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.cauhinhService.findOne(+id);
+    return this.cauhinhService.findOne(id);
   }
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateCauhinhDto: UpdateCauhinhDto) {
-    return this.cauhinhService.update(+id, updateCauhinhDto);
+    return this.cauhinhService.update(id, updateCauhinhDto);
   }
   @Delete(':id')
   async remove(@Param('id') id: string) {
-    await this.cauhinhService.remove(+id);
+    await this.cauhinhService.remove(id);
     return {
       statusCode: HttpStatus.OK,
       message: 'Xóa Thành Công',

@@ -1,14 +1,9 @@
 export interface Cauhinh {
   id?:string
   title?:string
-  detail?:Detail[]
+  detail?:string
   Trangthai?:number
   Ordering?:number
   Ngaytao?:Date
-  idTao?:number
+  idTao?:string
 }
-export interface Detail {
-  id?:number
-  Thuoctinh?:string
-}
-

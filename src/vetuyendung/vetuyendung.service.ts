@@ -20,16 +20,16 @@ export class VetuyendungService {
     return await this.VetuyendungsRepository.find();
   }
 
-  async findOne(id: number) {
+  async findOne(id: string) {
     return await this.VetuyendungsRepository.findOne({ where: { id: id } });
   }
 
-  async update(id: number, updateVetuyendungDto: UpdateVetuyendungDto) {
+  async update(id: string, updateVetuyendungDto: UpdateVetuyendungDto) {
     await this.VetuyendungsRepository.update(id, updateVetuyendungDto);
     return await this.VetuyendungsRepository.findOne({ where: { id: id } });
   }
 
-  async remove(id: number) {
+  async remove(id: string) {
     await this.VetuyendungsRepository.delete(id);
     return { deleted: true };
   }

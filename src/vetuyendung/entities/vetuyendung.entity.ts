@@ -1,12 +1,9 @@
 import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, Index, CreateDateColumn, Generated } from 'typeorm';
 @Entity('vetuyendungs')
 export class VetuyendungsEntity {
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn("uuid")
     id: string;
     //@Column({collation: "utf8_general_ci"})
-    @Column()
-    @Generated("uuid")
-    uuid: string;
     @Column()
     Vitri: number;
   //  @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })

@@ -1,7 +1,10 @@
 export interface UsersDTO {
-  id: number;
+  id: string;
   SDT: string;
   name: string;
   email: string;
   password: string;
+  profile: string;
+  Ngaytao: Date;
+  Role:string
 }

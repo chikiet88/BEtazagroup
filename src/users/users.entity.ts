@@ -1,8 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, Index, CreateDateColumn } from 'typeorm';
 @Entity("users")
 export class UsersEntity {
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn("uuid")
+    id: string;
     @Column({collation: "utf8_general_ci"})
     name: string;
     @Column()
@@ -11,8 +11,10 @@ export class UsersEntity {
     email: string;
     @Column()
     password: string;
-    @Column({collation: "utf8_general_ci",type:"simple-array"})
-    profile: [];
+    @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
+    profile: string;
+    @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
+    Role: string;
     @CreateDateColumn()
     Ngaytao: Date;   
     

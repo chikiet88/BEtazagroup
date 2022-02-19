@@ -19,16 +19,16 @@ export class VetuyendungController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.vetuyendungService.findOne(+id);
+    return this.vetuyendungService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateVetuyendungDto: UpdateVetuyendungDto) {
-    return this.vetuyendungService.update(+id, updateVetuyendungDto);
+    return this.vetuyendungService.update(id, updateVetuyendungDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.vetuyendungService.remove(+id);
+    return this.vetuyendungService.remove(id);
   }
 }
