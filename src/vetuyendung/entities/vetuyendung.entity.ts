@@ -1,11 +1,15 @@
 import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, Index, CreateDateColumn, Generated } from 'typeorm';
-@Entity('vetuyendungs')
+@Entity('vetuyendungs',{
+  orderBy: {
+      Ngaytao: "DESC"
+  }
+  })
 export class VetuyendungsEntity {
     @PrimaryGeneratedColumn("uuid")
     id: string;
     //@Column({collation: "utf8_general_ci"})
     @Column()
-    Vitri: number;
+    idVitri: string;
   //  @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
     @Column()
     SLHT:number;
