@@ -25,11 +25,14 @@ export class AuthService {
     
       async authentication(SDT: string, password: string): Promise<any> {
         const user = await this.usersService.findBySDT(SDT);
-        const check = await this.comparePassword(password, user.password);
-        if (!user || !check) {
-          return false;
+        if (!user) {
+          return 1;
         }
-        return this.login(user);
+        const check = await this.comparePassword(password, user.password);
+        if (!check) {
+          return 2;
+        }
+        else { return this.login(user);}
         //return user;
       }
       async validateUser(email: string, password: string): Promise<any> {
