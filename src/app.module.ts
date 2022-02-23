@@ -6,7 +6,8 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CauhinhModule } from './cauhinh/cauhinh.module';
 import { VetuyendungModule } from './vetuyendung/vetuyendung.module';
-import { ThongkekhModule } from './custom/thongkekh/thongkekh.module';
+import { Thongkekh } from './thongkekh/entities/thongkekh.entity';
+import { ThongkekhModule } from './thongkekh/thongkekh.module';
 
 @Module({
   imports: 
@@ -16,11 +17,12 @@ import { ThongkekhModule } from './custom/thongkekh/thongkekh.module';
     port: 3306,
     username: 'tazaspac_chikiet',
     password: '@Hikiet88',
+    //database: 'tazaspac_testblog',
     database: 'tazaspac_v2tazagroup',
     autoLoadEntities: true,
     synchronize: true,
     migrationsRun: true
-  }), UsersModule, AuthModule, CauhinhModule, VetuyendungModule, ThongkekhModule],
+  }), UsersModule, AuthModule, CauhinhModule, VetuyendungModule,ThongkekhModule],
   controllers: [AppController],
   providers: [AppService],
 })

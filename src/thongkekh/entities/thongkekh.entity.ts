@@ -15,12 +15,12 @@ export class Thongkekh {
     TDS: number;
     @Column()
     TTT: number;
-    @Column()
-    LMD: Date;
+    @Column({type: 'datetime',nullable: true})
+    LMD: string;
     @Column({collation: "utf8_general_ci"})
     NMD: string;
-    @Column()
-    LMC: Date;
+    @Column({type: 'datetime',nullable: true})
+    LMC: string;
     @Column({collation: "utf8_general_ci"})
     NMC: string;
     @CreateDateColumn()

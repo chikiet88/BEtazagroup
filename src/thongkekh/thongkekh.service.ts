@@ -1,11 +1,19 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateThongkekhDto } from './dto/create-thongkekh.dto';
 import { UpdateThongkekhDto } from './dto/update-thongkekh.dto';
+import { Thongkekh } from './entities/thongkekh.entity';
 
 @Injectable()
 export class ThongkekhService {
-  create(createThongkekhDto: CreateThongkekhDto) {
-    return 'This action adds a new thongkekh';
+  constructor(
+    @InjectRepository(Thongkekh)
+    private ThongkekhRepository: Repository<Thongkekh>,
+  ) {}
+ async create(createThongkekhDto: CreateThongkekhDto) {
+    this.ThongkekhRepository.create(createThongkekhDto);
+    return await this.ThongkekhRepository.save(createThongkekhDto);
   }
 
   findAll() {
