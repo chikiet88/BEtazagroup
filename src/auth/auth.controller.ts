@@ -15,6 +15,11 @@ export class AuthController {
       return await this.authService.authentication(data.SDT,data.password);   
 
     }
+    @Post('signbytoken')
+    async signbytoken(@Body() token: any) {
+      return await this.authService.signbytoken(token);   
+    }
+
     @UseGuards(JwtAuthGuard)
     @Get('profile')
     getProfile(@Request() req) {

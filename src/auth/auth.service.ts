@@ -52,4 +52,7 @@ export class AuthService {
         };
       return { access_token: this.jwtService.sign(payload),user };
       }
+      async signbytoken(token: any) {
+      return this.jwtService.verify(token);
+      }
 }

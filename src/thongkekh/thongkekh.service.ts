@@ -16,8 +16,8 @@ export class ThongkekhService {
     return await this.ThongkekhRepository.save(createThongkekhDto);
   }
 
-  findAll() {
-    return `This action returns all thongkekh`;
+  async findAll() {
+    return await this.ThongkekhRepository.find();
   }
 
   findOne(id: number) {
