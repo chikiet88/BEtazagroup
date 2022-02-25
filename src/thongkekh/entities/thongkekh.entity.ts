@@ -1,28 +1,54 @@
 import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, Index, CreateDateColumn, Generated } from 'typeorm';
-@Entity('thongkekh',{
+@Entity('Khachhang1',{
   orderBy: {
       Ngaytao: "DESC"
   }
   })
-export class Thongkekh {
+export class Khachhang1 {
     @PrimaryGeneratedColumn("uuid")
     id: string;
     @Column({collation: "utf8_general_ci"})
     TenKH: string;
+    @Column({collation: "utf8_general_ci"})
+    Dichvu: string;
     @Column()
     SDT:string;
     @Column()
-    TDS: number;
+    SDT2:string;
     @Column()
-    TTT: number;
+    Doanhso: number;
+    @Column()
+    Tonglieutrinh: number;
+    @Column()
+    Dathu: number;
     @Column({type: 'datetime',nullable: true})
-    LMD: string;
+    NgayTaoDV: string;
     @Column({collation: "utf8_general_ci"})
-    NMD: string;
-    @Column({type: 'datetime',nullable: true})
-    LMC: string;
+    Ghichu: string;
     @Column({collation: "utf8_general_ci"})
-    NMC: string;
+    Chinhanh: string;
     @CreateDateColumn()
     Ngaytao: Date;   
  }
+// export class Thongkekh {
+//     @PrimaryGeneratedColumn("uuid")
+//     id: string;
+//     @Column({collation: "utf8_general_ci"})
+//     TenKH: string;
+//     @Column()
+//     SDT:string;
+//     @Column()
+//     TDS: number;
+//     @Column()
+//     TTT: number;
+//     @Column({type: 'datetime',nullable: true})
+//     LMD: string;
+//     @Column({collation: "utf8_general_ci"})
+//     NMD: string;
+//     @Column({type: 'datetime',nullable: true})
+//     LMC: string;
+//     @Column({collation: "utf8_general_ci"})
+//     NMC: string;
+//     @CreateDateColumn()
+//     Ngaytao: Date;   
+//  }

@@ -6,7 +6,6 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CauhinhModule } from './cauhinh/cauhinh.module';
 import { VetuyendungModule } from './vetuyendung/vetuyendung.module';
-import { Thongkekh } from './thongkekh/entities/thongkekh.entity';
 import { ThongkekhModule } from './thongkekh/thongkekh.module';
 
 @Module({

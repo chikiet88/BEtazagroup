@@ -3,13 +3,13 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateThongkekhDto } from './dto/create-thongkekh.dto';
 import { UpdateThongkekhDto } from './dto/update-thongkekh.dto';
-import { Thongkekh } from './entities/thongkekh.entity';
+import { Khachhang1 } from './entities/thongkekh.entity';
 
 @Injectable()
 export class ThongkekhService {
   constructor(
-    @InjectRepository(Thongkekh)
-    private ThongkekhRepository: Repository<Thongkekh>,
+    @InjectRepository(Khachhang1)
+    private ThongkekhRepository: Repository<Khachhang1>,
   ) {}
  async create(createThongkekhDto: CreateThongkekhDto) {
     this.ThongkekhRepository.create(createThongkekhDto);

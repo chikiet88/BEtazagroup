@@ -1,4 +1,5 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, HttpStatus } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, HttpStatus, UseGuards } from '@nestjs/common';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { CauhinhService } from './cauhinh.service';
 import { CreateCauhinhDto } from './dto/create-cauhinh.dto';
 import { UpdateCauhinhDto } from './dto/update-cauhinh.dto';
@@ -6,7 +7,7 @@ import { UpdateCauhinhDto } from './dto/update-cauhinh.dto';
 @Controller('cauhinh')
 export class CauhinhController {
   constructor(private readonly cauhinhService: CauhinhService) {}
-
+  @UseGuards(JwtAuthGuard)
   @Post()
   async create(@Body() CreateCauhinhDto: CreateCauhinhDto) {;
     const result = await this.cauhinhService.create(CreateCauhinhDto);
@@ -18,10 +19,12 @@ export class CauhinhController {
     }
   }
 }
+@UseGuards(JwtAuthGuard)
   @Get()
   findAll() {
     return this.cauhinhService.findAll();
   }
+@UseGuards(JwtAuthGuard) 
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.cauhinhService.findOne(id);
