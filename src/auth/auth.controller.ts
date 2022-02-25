@@ -8,7 +8,11 @@ import { LocalAuthGuard } from './local-auth.guard';
 
 @Controller('auth')
 export class AuthController {
-    constructor(private authService: AuthService) {}
+    constructor(
+      private authService: AuthService,
+      private usersService: UsersService,
+      
+      ) {}
     //@UseGuards(LocalAuthGuard)
     @Post('login')
     async login(@Body() data: UsersDTO) {
@@ -16,13 +20,28 @@ export class AuthController {
 
     }
     @Post('signbytoken')
-    async signbytoken(@Body() token: any) {
-      return await this.authService.signbytoken(token);   
+    async signbytoken(@Body() access_token: any) { 
+      const check =  await this.authService.signbytoken(access_token);   
+      if(check)
+      {     
+        const user = await this.usersService.findBySDT(check.SDT);
+          if(user)
+          {
+            return user;
+          }
+          else return false;
+      }
+      else return false
     }
 
     @UseGuards(JwtAuthGuard)
     @Get('profile')
-    getProfile(@Request() req) {
-      return req.user;
+    async getProfile(@Request() req) {
+      const user = await this.usersService.findBySDT(req.user.user.SDT);
+      if(user)
+      {
+        return user;
+      }
+      else return false;
     }
  }

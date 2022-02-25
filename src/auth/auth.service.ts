@@ -53,6 +53,11 @@ export class AuthService {
       return { access_token: this.jwtService.sign(payload),user };
       }
       async signbytoken(token: any) {
-      return this.jwtService.verify(token);
+        try {
+          return await this.jwtService.verify(token.access_token);
+        } catch (error) {
+          return false;
+        }
+
       }
 }
