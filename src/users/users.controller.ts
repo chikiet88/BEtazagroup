@@ -30,37 +30,17 @@ import { NotiDTO } from './noti.dto';
 
     @Get()
     async showAllUsers() {
-      const users =  await this.usersService.showAll();
-      return {
-        statusCode: HttpStatus.OK,
-        message: 'Users fetched successfully',
-        users
-      };
+      return await this.usersService.showAll();
+      // return {
+      //   statusCode: HttpStatus.OK,
+      //   message: 'Users fetched successfully',
+      //   users
+      // };
     }
 
     @Post()
     async createUsers(@Body() data: UsersDTO) {
-      const check = await this.validateSDT(data.SDT);
-      if (check) {
-        return {
-          statusCode: HttpStatus.BAD_REQUEST,
-          message: 'Số Điện Thoại Đã Tồn Tại',
-        };
-      }
-      const check1 = await this.validateEmail(data.email);
-      if (check1) {
-        return {
-          statusCode: HttpStatus.BAD_REQUEST,
-          message: 'Email Đã Tồn Tại',
-        };
-      }    
-      data.password = await this.usersService.setPassword(data.password);
-      const user = await this.usersService.create(data);
-      return {
-        statusCode: HttpStatus.OK,
-        message: 'Tạo User Thành Công',
-        user
-      };
+      return await this.usersService.create(data);
     }
 
     @Get(':id')
@@ -89,22 +69,5 @@ import { NotiDTO } from './noti.dto';
         statusCode: HttpStatus.OK,
         message: 'User deleted successfully',
       };
-    }
-
-    async validateSDT(SDT: string) {
-      try {
-        const user = await this.usersService.findBySDT(SDT);
-        return user;
-      } catch (e) {
-        return false;
-      }
-    }  
-    async validateEmail(email: string) {
-      try {
-       const user = await this.usersService.findByEmail(email);
-        return user;
-      } catch (e) {
-        return false;
-      }
     }     
   }

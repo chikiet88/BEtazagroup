@@ -52,9 +52,18 @@ import * as bcrypt from 'bcrypt';
           return await bcrypt.hash(password, salt);
         }
       async create(data: UsersDTO) {
-        const user = this.usersRepository.create(data);
-        await this.usersRepository.save(data);
-        return user;
+       const check = await this.validateSDT(data.SDT);
+       if (check) {
+         return 1
+       }
+       const check1 = await this.validateEmail(data.email);
+       if (check1) {
+         return 2
+       }    
+       data.password = await this.setPassword(data.password);
+       this.usersRepository.create(data);
+       return await this.usersRepository.save(data);
+
       }
 
       async findByEmail(email: string): Promise<UsersDTO> {
@@ -84,4 +93,23 @@ import * as bcrypt from 'bcrypt';
         await this.usersRepository.delete({ id });
         return { deleted: true };
       }
+
+
+      async validateSDT(SDT: string) {
+        try {
+          const user = await this.findBySDT(SDT);
+          return user;
+        } catch (e) {
+          return false;
+        }
+      }  
+      async validateEmail(email: string) {
+        try {
+         const user = await this.findByEmail(email);
+          return user;
+        } catch (e) {
+          return false;
+        }
+      }
+
     }
