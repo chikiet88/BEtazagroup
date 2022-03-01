@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, Index, CreateDateColumn } from 'typeorm';
-@Entity("users")
+@Entity("users",{orderBy: {Ngaytao: "DESC"}})
 export class UsersEntity {
     @PrimaryGeneratedColumn("uuid")
     id: string;
@@ -9,6 +9,8 @@ export class UsersEntity {
     SDT: string;
     @Column({collation: "utf8_general_ci"})
     email: string;
+    @Column({collation: "utf8_general_ci",nullable: true})
+    avatar: string;
     @Column()
     password: string;
     @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })

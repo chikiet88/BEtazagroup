@@ -4,6 +4,7 @@ export interface UsersDTO {
   name: string;
   email: string;
   password: string;
+  avatar: string;
   profile: string;
   Ngaytao: Date;
   Role:string
