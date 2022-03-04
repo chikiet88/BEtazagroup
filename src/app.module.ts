@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { CauhinhModule } from './cauhinh/cauhinh.module';
 import { VetuyendungModule } from './vetuyendung/vetuyendung.module';
 import { ThongkekhModule } from './thongkekh/thongkekh.module';
+import { LichhopModule } from './lichhop/lichhop.module';
 
 @Module({
   imports: 
@@ -21,7 +22,7 @@ import { ThongkekhModule } from './thongkekh/thongkekh.module';
     autoLoadEntities: true,
     synchronize: true,
     migrationsRun: true
-  }), UsersModule, AuthModule, CauhinhModule, VetuyendungModule,ThongkekhModule],
+  }), UsersModule, AuthModule, CauhinhModule, VetuyendungModule,ThongkekhModule, LichhopModule],
   controllers: [AppController],
   providers: [AppService],
 })

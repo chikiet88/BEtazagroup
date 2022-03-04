@@ -20,9 +20,9 @@ export class VetuyendungsEntity {
     @Column()
     TGThuviec: number;
     @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
-    TNNS: number;
+    TNNS: string;
     @Column()
-    Lydo: number;
+    Lydo: string;
     @Column({type:'longtext',collation:"utf8_general_ci"})
     Mota: string;
     @Column({type:'longtext',collation:"utf8_general_ci"})
