@@ -20,15 +20,16 @@ export class LichhopService {
     return await this.LichhopsRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} lichhop`;
+  async findOne(id: string) {
+    return await this.LichhopsRepository.findOne({ where: { id: id } });
+  }
+  async update(id: string, updateLichhopDto: UpdateLichhopDto) {
+    await this.LichhopsRepository.update(id, updateLichhopDto);
+    return await this.LichhopsRepository.findOne({ where: { id: id } });
   }
 
-  update(id: number, updateLichhopDto: UpdateLichhopDto) {
-    return `This action updates a #${id} lichhop`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} lichhop`;
+  async remove(id: string) {
+    await this.LichhopsRepository.delete(id);
+    return { deleted: true };
   }
 }

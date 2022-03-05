@@ -19,16 +19,15 @@ export class LichhopController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.lichhopService.findOne(+id);
+    return this.lichhopService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateLichhopDto: UpdateLichhopDto) {
-    return this.lichhopService.update(+id, updateLichhopDto);
+    return this.lichhopService.update(id, updateLichhopDto);
   }
-
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.lichhopService.remove(+id);
+    return this.lichhopService.remove(id);
   }
 }
