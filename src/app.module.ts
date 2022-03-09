@@ -21,7 +21,10 @@ import { LichhopModule } from './lichhop/lichhop.module';
     database: 'tazaspac_v2tazagroup',
     autoLoadEntities: true,
     synchronize: true,
-    migrationsRun: true
+    migrationsRun: true,
+    extra: {
+      connectionLimit: 30
+  }
   }), UsersModule, AuthModule, CauhinhModule, VetuyendungModule,ThongkekhModule, LichhopModule],
   controllers: [AppController],
   providers: [AppService],
