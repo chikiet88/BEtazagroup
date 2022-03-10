@@ -19,7 +19,7 @@ export class LichhopController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.lichhopService.findOne(id);
+    return this.lichhopService.findWhere(id);
   }
 
   @Patch(':id')

@@ -1,4 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, Index, CreateDateColumn } from 'typeorm';
+import { Role } from './users.dto';
 @Entity("users",{orderBy: {Ngaytao: "DESC"}})
 export class UsersEntity {
     @PrimaryGeneratedColumn("uuid")
@@ -15,9 +16,13 @@ export class UsersEntity {
     password: string;
     @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
     profile: string;
-    @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
+    //@Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
+    @Column({type: 'enum', enum: Role, default: Role.User})
     Role: string;
     @CreateDateColumn()
     Ngaytao: Date;   
-    
+    @BeforeInsert()
+    emailToLowerCase() {
+        this.email = this.email.toLowerCase();
+    }
  }

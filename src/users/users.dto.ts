@@ -9,3 +9,8 @@ export interface UsersDTO {
   Ngaytao: Date;
   Role:string
 }
+export enum Role {
+  Admin = 'admin',
+  Manager = 'manager',
+  User = 'user',
+}

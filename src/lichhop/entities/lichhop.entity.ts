@@ -1,7 +1,10 @@
 import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, Index, CreateDateColumn, Generated } from 'typeorm';
 @Entity('Lichhop',{
   orderBy: {
-      Ngaytao: "DESC"
+      Ngaytao: "DESC",
+      Batdau: "ASC",
+      Hoanthanh: "ASC",
+      Review: "ASC",
   }
   })
 export class Lichhop {
@@ -27,21 +30,22 @@ export class Lichhop {
     Review: Date;
     @Column({type: 'datetime',nullable: true})
     Hoanthanh: Date;
-    @Column({collation: "utf8_general_ci"})
+    @Column({collation: "utf8_general_ci",nullable: true})
     Noidung: string;
-    @Column({collation: "utf8_general_ci"})
+    @Column({collation: "utf8_general_ci",nullable: true})
     Trienkhai: string;
-    @Column({collation: "utf8_general_ci"})
+    @Column({collation: "utf8_general_ci",nullable: true})
     Ketqua: string;
-    @Column({collation: "utf8_general_ci"})
+    @Column({collation: "utf8_general_ci",nullable: true})
     Mongdoi: string;
-    @Column({collation: "utf8_general_ci"})
+    @Column({collation: "utf8_general_ci",nullable: true})
     Dieuchinh:string;
-    @Column({collation: "utf8_general_ci"})
+    @Column({collation: "utf8_general_ci",nullable: true})
     Dieukienkhac: string;
-    @Column({collation: "utf8_general_ci"})
+    @Column({collation: "utf8_general_ci",nullable: true})
     Nguyennhan: string;
     @CreateDateColumn()
+    //@Column({type: 'datetime',nullable: true})
     Ngaytao:Date;
     @Column()
     idTao:string;   
