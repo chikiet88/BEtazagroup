@@ -8,6 +8,7 @@ import { CauhinhModule } from './cauhinh/cauhinh.module';
 import { VetuyendungModule } from './vetuyendung/vetuyendung.module';
 import { ThongkekhModule } from './thongkekh/thongkekh.module';
 import { LichhopModule } from './lichhop/lichhop.module';
+import { NotificationModule } from './notification/notification.module';
 
 @Module({
   imports: 
@@ -25,7 +26,7 @@ import { LichhopModule } from './lichhop/lichhop.module';
     extra: {
       connectionLimit: 30
   }
-  }), UsersModule, AuthModule, CauhinhModule, VetuyendungModule,ThongkekhModule, LichhopModule],
+  }), UsersModule, AuthModule, CauhinhModule, VetuyendungModule,ThongkekhModule, LichhopModule, NotificationModule],
   controllers: [AppController],
   providers: [AppService],
 })
