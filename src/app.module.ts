@@ -12,16 +12,31 @@ import { NotificationModule } from './notification/notification.module';
 
 @Module({
   imports: 
-  [TypeOrmModule.forRoot({
+  [
+  // TypeOrmModule.forRoot({
+  //   type: 'mysql',
+  //   host: '103.221.222.71',
+  //   port: 3306,
+  //   username: 'tazaspac_chikiet',
+  //   password: '@Hikiet88',
+  //   //database: 'tazaspac_testblog',
+  //   database: 'tazaspac_v2tazagroup',
+  //   autoLoadEntities: true,
+  //   synchronize: true,
+  //   migrationsRun: true,
+  //   extra: {
+  //     connectionLimit: 30
+  // }
+
+  TypeOrmModule.forRoot({
     type: 'mysql',
-    host: '103.221.222.71',
+    host: 'localhost',
     port: 3306,
-    username: 'tazaspac_chikiet',
-    password: '@Hikiet88',
-    //database: 'tazaspac_testblog',
-    database: 'tazaspac_v2tazagroup',
+    username: 'root',
+    password: '',
+    database: 'test2',
     autoLoadEntities: true,
-    synchronize: true,
+    synchronize: false,
     migrationsRun: true,
     extra: {
       connectionLimit: 30

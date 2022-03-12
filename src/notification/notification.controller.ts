@@ -2,7 +2,16 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { NotificationService } from './notification.service';
 import { CreateNotificationDto } from './dto/create-notification.dto';
 import { UpdateNotificationDto } from './dto/update-notification.dto';
-
+const webpush = require('web-push');
+const vapidKeys = {
+    "publicKey":"BJe-03OtBqwjGbpangu282m8R_E5qtjanOUANBF-ID37Fq-V2hZoOJ5hZJlW0qeXt0prcfIsu63gNQ_xmXPCE3M",
+    "privateKey":"zLRVEtYggf-sYOJmkhdFp3-pMD67V9DhASO0xLR-QDw"
+};
+webpush.setVapidDetails(
+    'mailto:admin@tazagroup.vn',
+    vapidKeys.publicKey,
+    vapidKeys.privateKey
+);
 @Controller('notification')
 export class NotificationController {
   constructor(private readonly notificationService: NotificationService) {}
