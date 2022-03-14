@@ -12,9 +12,9 @@ export class Khachhang1 {
     @Column({collation: "utf8_general_ci"})
     Dichvu: string;
     @Column()
-    SDT:number;
+    SDT:string;
     @Column()
-    SDT2:number;
+    SDT2:string;
     @Column()
     Doanhso: number;
     @Column()
