@@ -16,10 +16,11 @@ export class ThongkekhService {
     return await this.ThongkekhRepository.save(createThongkekhDto);
   }
   async findAll() {
-    return await this.ThongkekhRepository.find({   
-      skip: 0,
-      take: 10,
-    });
+    return await this.ThongkekhRepository.find();
+    // return await this.ThongkekhRepository.find({   
+    //   skip: 0,
+    //   take: 10,
+    // });
   }
 
   findOne(id: number) {

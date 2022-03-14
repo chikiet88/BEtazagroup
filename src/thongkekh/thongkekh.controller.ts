@@ -2,7 +2,6 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { ThongkekhService } from './thongkekh.service';
 import { CreateThongkekhDto } from './dto/create-thongkekh.dto';
 import { UpdateThongkekhDto } from './dto/update-thongkekh.dto';
-
 @Controller('thongkekh')
 export class ThongkekhController {
   constructor(private readonly thongkekhService: ThongkekhService) {}
