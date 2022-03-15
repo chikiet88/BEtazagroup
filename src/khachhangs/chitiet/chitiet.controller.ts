@@ -26,10 +26,9 @@ export class ChitietController {
     ) {
     return this.chitietService.findpaged(skip,take);
   }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.chitietService.findOne(+id);
+  @Get(':SDT')
+  findBySDT(@Param('SDT') SDT: string) {
+    return this.chitietService.findBySDT(SDT);
   }
 
   @Patch(':id')

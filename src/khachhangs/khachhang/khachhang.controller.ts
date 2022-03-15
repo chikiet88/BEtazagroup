@@ -6,12 +6,10 @@ import { UpdateKhachhangDto } from './dto/update-khachhang.dto';
 @Controller('khachhangs/khachhang')
 export class KhachhangController {
   constructor(private readonly khachhangService: KhachhangService) {}
-
   @Post()
   create(@Body() createKhachhangDto: CreateKhachhangDto) {
     return this.khachhangService.create(createKhachhangDto);
   }
-
   @Get()
   findAll() {
     return this.khachhangService.findAll();

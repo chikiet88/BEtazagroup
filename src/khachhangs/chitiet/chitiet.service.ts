@@ -15,7 +15,9 @@ export class ChitietService {
     return await this.ChitietRepository.save(createChitietDto);
   }
   async findAll() {
-    return await this.ChitietRepository.find();
+    return await this.ChitietRepository.find({ 
+      take:1000,
+      skip:0 });
   }
   async findpaged(skip:number=0,take: number = 10) {
     const [data, total] = await this.ChitietRepository.findAndCount(
@@ -28,8 +30,10 @@ export class ChitietService {
   async findCount() {
     return await this.ChitietRepository.findAndCount();
   }
-  findOne(id: number) {
-    return `This action returns a #${id} chitiet`;
+  async findBySDT(SDT: string) {
+    return await this.ChitietRepository.find(
+      { where :{SDT:SDT}}
+    );
   }
 
   update(id: number, updateChitietDto: UpdateChitietDto) {

@@ -17,12 +17,7 @@ export class KhachhangService {
     return await this.KhachhangRepository.save(CreateKhachhangDto);
   }
   async findAll() {
-    return await this.KhachhangRepository.find(
-      {
-          skip: 0,
-          take: 100,
-      }
-      );
+    return await this.KhachhangRepository.find();
   }
 
   findOne(id: number) {
