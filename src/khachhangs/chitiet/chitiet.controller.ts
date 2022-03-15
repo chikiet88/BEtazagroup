@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { ChitietService } from './chitiet.service';
 import { CreateChitietDto } from './dto/create-chitiet.dto';
 import { UpdateChitietDto } from './dto/update-chitiet.dto';
@@ -11,10 +11,20 @@ export class ChitietController {
   create(@Body() createChitietDto: CreateChitietDto) {
     return this.chitietService.create(createChitietDto);
   }
-
   @Get()
   findAll() {
     return this.chitietService.findAll();
+  }
+  @Get('count')
+  findCount() {
+    return this.chitietService.findCount();
+  }
+  @Get('paged')
+  Loadmore(
+    @Query('take') take: number,
+    @Query('skip') skip: number,
+    ) {
+    return this.chitietService.findpaged(skip,take);
   }
 
   @Get(':id')

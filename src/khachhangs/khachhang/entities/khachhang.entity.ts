@@ -9,21 +9,13 @@ export class KhachhangEntity {
     id: string;
     @Column({collation: "utf8_general_ci"})
     TenKH: string;
-    @Column({collation: "utf8_general_ci"})
-    Dichvu: string;
     @Column()
     SDT:string;
     @Column()
     SDT2:string;
     @Column()
-    Doanhso: number;
-    @Column()
-    Tonglieutrinh: number;
-    @Column()
     Dathu: number;
     @Column({type: 'datetime',nullable: true})
-    NgayTaoDV: string;
-    @Column({collation: "utf8_general_ci"})
     Ghichu: string;
     @Column({collation: "utf8_general_ci"})
     Chinhanh: string;

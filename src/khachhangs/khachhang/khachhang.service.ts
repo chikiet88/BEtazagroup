@@ -1,15 +1,28 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateKhachhangDto } from './dto/create-khachhang.dto';
 import { UpdateKhachhangDto } from './dto/update-khachhang.dto';
+import { KhachhangEntity } from './entities/khachhang.entity';
 
 @Injectable()
 export class KhachhangService {
-  create(createKhachhangDto: CreateKhachhangDto) {
-    return 'This action adds a new khachhang';
-  }
 
-  findAll() {
-    return `This action returns all khachhang`;
+  constructor(
+    @InjectRepository(KhachhangEntity)
+    private KhachhangRepository: Repository<KhachhangEntity>,
+  ) {}
+  async create(CreateKhachhangDto: CreateKhachhangDto) {
+    this.KhachhangRepository.create(CreateKhachhangDto);
+    return await this.KhachhangRepository.save(CreateKhachhangDto);
+  }
+  async findAll() {
+    return await this.KhachhangRepository.find(
+      {
+          skip: 0,
+          take: 100,
+      }
+      );
   }
 
   findOne(id: number) {

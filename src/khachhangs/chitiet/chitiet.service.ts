@@ -17,6 +17,17 @@ export class ChitietService {
   async findAll() {
     return await this.ChitietRepository.find();
   }
+  async findpaged(skip:number=0,take: number = 10) {
+    const [data, total] = await this.ChitietRepository.findAndCount(
+      { 
+        take:take,
+        skip:skip }
+      );
+    return { data, total };
+  }
+  async findCount() {
+    return await this.ChitietRepository.findAndCount();
+  }
   findOne(id: number) {
     return `This action returns a #${id} chitiet`;
   }

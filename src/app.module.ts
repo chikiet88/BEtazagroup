@@ -15,34 +15,34 @@ import { ChitietModule } from './khachhangs/chitiet/chitiet.module';
 @Module({
   imports: 
   [
-  // TypeOrmModule.forRoot({
-  //   type: 'mysql',
-  //   host: '103.221.222.71',
-  //   port: 3306,
-  //   username: 'tazaspac_chikiet',
-  //   password: '@Hikiet88',
-  //   //database: 'tazaspac_testblog',
-  //   database: 'tazaspac_v2tazagroup',
-  //   autoLoadEntities: true,
-  //   synchronize: true,
-  //   migrationsRun: true,
-  //   extra: {
-  //     connectionLimit: 30
-  // }
-
   TypeOrmModule.forRoot({
     type: 'mysql',
-    host: 'localhost',
+    host: '103.221.222.71',
     port: 3306,
-    username: 'root',
-    password: '',
-    database: 'test3',
+    username: 'tazaspac_chikiet',
+    password: '@Hikiet88',
+    //database: 'tazaspac_testblog',
+    database: 'tazaspac_v2tazagroup',
     autoLoadEntities: true,
-    synchronize: false,
+    synchronize: true,
     migrationsRun: true,
     extra: {
       connectionLimit: 30
   }
+
+  // TypeOrmModule.forRoot({
+  //   type: 'mysql',
+  //   host: 'localhost',
+  //   port: 3306,
+  //   username: 'root',
+  //   password: '',
+  //   database: 'test3',
+  //   autoLoadEntities: true,
+  //   synchronize: false,
+  //   migrationsRun: true,
+  //   extra: {
+  //     connectionLimit: 30
+  // }
   }), UsersModule, AuthModule, CauhinhModule, VetuyendungModule,ThongkekhModule, LichhopModule, NotificationModule, KhachhangModule, ChitietModule],
   controllers: [AppController],
   providers: [AppService],
