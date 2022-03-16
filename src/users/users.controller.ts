@@ -55,11 +55,7 @@ import { NotiDTO } from './noti.dto';
 
     @Patch(':id')
     async uppdateUser(@Param('id') id: string, @Body() data: Partial<UsersDTO>) {
-      await this.usersService.update(id, data);
-      return {
-        statusCode: HttpStatus.OK,
-        message: 'User updated successfully',
-      };
+      return await this.usersService.update(id, data);
     }
 
     @Delete(':id')
