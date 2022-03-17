@@ -15,9 +15,10 @@ export class ChitietService {
     return await this.ChitietRepository.save(createChitietDto);
   }
   async findAll() {
-    return await this.ChitietRepository.find({ 
-      take:1000,
-      skip:0 });
+    return await this.ChitietRepository.find();
+    // return await this.ChitietRepository.find({ 
+    //   take:1000,
+    //   skip:0 });
   }
   async findpaged(skip:number=0,take: number = 10) {
     const [data, total] = await this.ChitietRepository.findAndCount(

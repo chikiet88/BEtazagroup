@@ -19,10 +19,14 @@ export class KhachhangService {
   async findAll() {
     return await this.KhachhangRepository.find();
   }
-
-  findOne(id: number) {
-    return `This action returns a #${id} khachhang`;
+  async findByChinhanh(Chinhanh: string) {
+    return await this.KhachhangRepository.find(
+      { where :{Chinhanh:Chinhanh}}
+    );
   }
+  // findOne(id: number) {
+  //   return `This action returns a #${id} khachhang`;
+  // }
 
   update(id: number, updateKhachhangDto: UpdateKhachhangDto) {
     return `This action updates a #${id} khachhang`;

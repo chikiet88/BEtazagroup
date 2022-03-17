@@ -14,12 +14,10 @@ export class KhachhangController {
   findAll() {
     return this.khachhangService.findAll();
   }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.khachhangService.findOne(+id);
+  @Get(':Chinhanh')
+  findByChinhanh(@Param('Chinhanh') Chinhanh: string) {
+    return this.khachhangService.findByChinhanh(Chinhanh);
   }
-
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateKhachhangDto: UpdateKhachhangDto) {
     return this.khachhangService.update(+id, updateKhachhangDto);

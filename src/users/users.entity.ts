@@ -16,9 +16,10 @@ export class UsersEntity {
     password: string;
     @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
     profile: string;
-    //@Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
     @Column({type: 'enum', enum: Role, default: Role.User})
     Role: string;
+    @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
+    Phanquyen: string;
     @CreateDateColumn()
     Ngaytao: Date;   
     @BeforeInsert()

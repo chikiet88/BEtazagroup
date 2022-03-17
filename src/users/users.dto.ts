@@ -7,7 +7,8 @@ export interface UsersDTO {
   avatar: string;
   profile: string;
   Ngaytao: Date;
-  Role:string
+  Role:string;
+  Phanquyen:string;
 }
 export enum Role {
   Admin = 'admin',
