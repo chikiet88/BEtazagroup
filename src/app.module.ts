@@ -11,6 +11,7 @@ import { LichhopModule } from './lichhop/lichhop.module';
 import { NotificationModule } from './notification/notification.module';
 import { KhachhangModule } from './khachhangs/khachhang/khachhang.module';
 import { ChitietModule } from './khachhangs/chitiet/chitiet.module';
+import { NavigationModule } from './navigation/navigation.module';
 
 @Module({
   imports: 
@@ -43,7 +44,7 @@ import { ChitietModule } from './khachhangs/chitiet/chitiet.module';
   //   extra: {
   //     connectionLimit: 30
   // }
-  }), UsersModule, AuthModule, CauhinhModule, VetuyendungModule,ThongkekhModule, LichhopModule, NotificationModule, KhachhangModule, ChitietModule],
+  }), UsersModule, AuthModule, CauhinhModule, VetuyendungModule,ThongkekhModule, LichhopModule, NotificationModule, KhachhangModule, ChitietModule, NavigationModule],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -19,6 +19,14 @@ export class KhachhangEntity {
     Ghichu: string;
     @Column({collation: "utf8_general_ci"})
     Chinhanh: string;
+    @Column({type: 'datetime',nullable: true})
+    NgayMD: Date;
+    @Column({collation: "utf8_general_ci"})
+    NoiMD: string;
+    @Column({type: 'datetime',nullable: true})
+    NgayMC: Date;
+    @Column({collation: "utf8_general_ci"})
+    NoiMC: string;
     @CreateDateColumn()
     Ngaytao: Date;   
  }
