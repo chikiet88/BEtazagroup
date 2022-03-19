@@ -1,9 +1,9 @@
 import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, Index, CreateDateColumn, Generated, ManyToOne, OneToMany, Tree, TreeChildren, TreeParent } from 'typeorm';
-@Entity('Navigation',{orderBy: {Ngaytao: "DESC"}
+@Entity('Navigation',{orderBy: {Ngaytao: "ASC"}
   })
 export class NavigationEntity {
-    @PrimaryGeneratedColumn("uuid")
-    uuid: string;    
+    @PrimaryGeneratedColumn()
+    uuid: number;    
     @Column()
     id: string;
     @Column({collation: "utf8_general_ci"})
@@ -16,6 +16,8 @@ export class NavigationEntity {
     link: string;
     @Column()
     parent: string
+    @Column()
+    level: number
     @CreateDateColumn()
     Ngaytao:Date;
     @Column({default: false})
