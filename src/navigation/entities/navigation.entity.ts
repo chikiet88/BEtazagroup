@@ -3,9 +3,9 @@ import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, Index, CreateDate
   })
 export class NavigationEntity {
     @PrimaryGeneratedColumn("uuid")
-    uuid: string;  
+    uuid: string;    
     @Column()
-    id: string;  
+    id: string;
     @Column({collation: "utf8_general_ci"})
     title: string;
     @Column()
