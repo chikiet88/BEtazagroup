@@ -23,9 +23,9 @@ export class NavigationController {
     return this.navigationService.findOne(id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateNavigationDto: UpdateNavigationDto) {
-    return this.navigationService.update(+id, updateNavigationDto);
+  @Patch(':uuid')
+  update(@Param('uuid') id: string, @Body() updateNavigationDto: UpdateNavigationDto) {
+    return this.navigationService.update(id, updateNavigationDto);
   }
 
   @Delete(':id')

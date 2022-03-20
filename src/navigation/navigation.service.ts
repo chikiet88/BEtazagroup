@@ -25,8 +25,9 @@ export class NavigationService {
     return await this.NavigationRepository.find({where:{uuid:uuid}});
   }
 
-  update(id: number, updateNavigationDto: UpdateNavigationDto) {
-    return `This action updates a #${id} navigation`;
+  async update(uuid: string, updateNavigationDto: UpdateNavigationDto) {
+    await this.NavigationRepository.update(uuid, updateNavigationDto);
+    return await this.findAll();
   }
 
   remove(id: number) {

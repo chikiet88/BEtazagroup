@@ -9,6 +9,7 @@ export interface UsersDTO {
   Ngaytao: Date;
   Role:string;
   Phanquyen:string;
+  Menu:string;
 }
 export enum Role {
   Admin = 'admin',

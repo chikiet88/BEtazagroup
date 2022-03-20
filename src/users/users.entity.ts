@@ -18,8 +18,11 @@ export class UsersEntity {
     profile: string;
     @Column({type: 'enum', enum: Role, default: Role.User})
     Role: string;
+    //@Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{Chinhanh:[],Menu:[]}')" })
     @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
     Phanquyen: string;
+    @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
+    Menu: string;
     @CreateDateColumn()
     Ngaytao: Date;   
     @BeforeInsert()

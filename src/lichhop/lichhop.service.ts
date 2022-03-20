@@ -24,7 +24,6 @@ export class LichhopService {
       where: [{Chutri: id},{Thamgia: In([id])}]
    })
   }
-
   async findOne(id: string) {
     return await this.LichhopsRepository.findOne({ where: { id: id } });
   }
