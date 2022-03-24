@@ -9,26 +9,32 @@ export class VetuyendungsEntity {
     id: string;
     //@Column({collation: "utf8_general_ci"})
     @Column()
-    idVitri: string;
+    Vitri: string;
   //  @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
     @Column()
-    SLHT:number;
+    Nhansuhienco:number;
     @Column()
-    SLCT: number;
+    Nhansucantuyen: number;
+    @Column({type:'bigint'})
+    Mucluongdukien: number;
+    @Column({type:'bigint'})
+    Tongthunhap: number;
     @Column()
-    LuongDK: number;
-    @Column()
-    TGThuviec: number;
+    Thoigianthuviec: number;
     @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
     TNNS: string;
     @Column()
-    Lydo: string;
+    Lydotuyen: string;
     @Column({type:'longtext',collation:"utf8_general_ci"})
     Mota: string;
     @Column({type:'longtext',collation:"utf8_general_ci"})
     Yeucau: string;
-    @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
-    Pheduyet: {};
+    @Column({collation: "utf8_general_ci",type:"simple-array",default: () => "('[]')" })
+    Nguoipheduyet: string;
+    @Column({type:'longtext',collation:"utf8_general_ci"})
+    Ghichu: string;
+    @Column()
+    Step: number;
     @Column()
     Trangthai: number;
     @Column()
@@ -38,5 +44,5 @@ export class VetuyendungsEntity {
     @CreateDateColumn()
     Ngaytao: Date;   
     @Column()
-    idTao: number; 
+    idTao: string; 
  }
