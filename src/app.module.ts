@@ -12,6 +12,7 @@ import { NotificationModule } from './notification/notification.module';
 import { KhachhangModule } from './khachhangs/khachhang/khachhang.module';
 import { ChitietModule } from './khachhangs/chitiet/chitiet.module';
 import { NavigationModule } from './navigation/navigation.module';
+import { CauhoithuonggapModule } from './cauhoithuonggap/cauhoithuonggap.module';
 
 @Module({
   imports: 
@@ -44,7 +45,7 @@ import { NavigationModule } from './navigation/navigation.module';
   //   extra: {
   //     connectionLimit: 30
   // }
-  }), UsersModule, AuthModule, CauhinhModule, VetuyendungModule,ThongkekhModule, LichhopModule, NotificationModule, KhachhangModule, ChitietModule, NavigationModule],
+  }), UsersModule, AuthModule, CauhinhModule, VetuyendungModule,ThongkekhModule, LichhopModule, NotificationModule, KhachhangModule, ChitietModule, NavigationModule, CauhoithuonggapModule],
   controllers: [AppController],
   providers: [AppService],
 })
