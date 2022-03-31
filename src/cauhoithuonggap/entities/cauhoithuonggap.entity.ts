@@ -9,6 +9,8 @@ export class CauhoithuonggapEntity {
     id: string;
     @Column()
     Vitri : string;
+    @Column({type:"text",collation: "utf8_general_ci"})
+    Tieude: string;
     @Column({type:"longtext",collation: "utf8_general_ci"})
     NoidungCauhoi: string;
     @Column({type:"longtext",collation: "utf8_general_ci"})

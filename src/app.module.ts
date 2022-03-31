@@ -13,7 +13,6 @@ import { KhachhangModule } from './khachhangs/khachhang/khachhang.module';
 import { ChitietModule } from './khachhangs/chitiet/chitiet.module';
 import { NavigationModule } from './navigation/navigation.module';
 import { CauhoithuonggapModule } from './cauhoithuonggap/cauhoithuonggap.module';
-
 @Module({
   imports: 
   [
