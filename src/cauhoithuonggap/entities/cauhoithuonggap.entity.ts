@@ -7,7 +7,7 @@ import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeor
 export class CauhoithuonggapEntity {
     @PrimaryGeneratedColumn("uuid")
     id: string;
-    @Column()
+    @Column({nullable: true})
     Vitri : string;
     @Column({type:"text",collation: "utf8_general_ci"})
     Tieude: string;
@@ -17,8 +17,10 @@ export class CauhoithuonggapEntity {
     NoidungTraloi: string;
     @Column({type:"simple-array",default: () => "('[]')"})
     Cauhoituongtu: string;
+    @Column({default:0})
+    Trangthai:number;
     @CreateDateColumn()
     Ngaytao:Date;
-    @Column()
+    @Column({nullable: true})
     idTao:string;   
  }
