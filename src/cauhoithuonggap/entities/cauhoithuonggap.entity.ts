@@ -15,8 +15,8 @@ export class CauhoithuonggapEntity {
     NoidungCauhoi: string;
     @Column({type:"longtext",collation: "utf8_general_ci"})
     NoidungTraloi: string;
-    @Column({type:"simple-array",default: () => "('[]')"})
-    Cauhoituongtu: string;
+    @Column({type:"simple-array"})
+    Cauhoituongtu: string[];
     @Column({default:0})
     Trangthai:number;
     @CreateDateColumn()
