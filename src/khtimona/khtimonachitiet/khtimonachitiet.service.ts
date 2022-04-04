@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Like, Repository } from 'typeorm';
 import { CreateKhtimonachitietDto } from './dto/create-khtimonachitiet.dto';
 import { UpdateKhtimonachitietDto } from './dto/update-khtimonachitiet.dto';
 import { KhtimonachitietEntity } from './entities/khtimonachitiet.entity';
@@ -10,7 +10,7 @@ export class KhtimonachitietService {
 
   constructor(
     @InjectRepository(KhtimonachitietEntity)
-    private KhtimonachitietRepository: Repository<KhtimonachitietEntity>,
+    private KhtimonachitietRepository: Repository<KhtimonachitietService>,
   ) {}
   async create(CreateKhtimonachitietDto: CreateKhtimonachitietDto) {
     this.KhtimonachitietRepository.create(CreateKhtimonachitietDto);
@@ -22,6 +22,17 @@ export class KhtimonachitietService {
   async findByChinhanh(Chinhanh: string) {
     return await this.KhtimonachitietRepository.find(
       { where :{Chinhanh:Chinhanh}}
+    );
+  }
+  async findBySDT(SDT: string) {
+    return await this.KhtimonachitietRepository.find(
+      { where :{SDT:SDT}}
+    );
+  }
+  async findByTenKH(TenKH: string) {
+    return await this.KhtimonachitietRepository.find(
+      { where :{TenKH: Like(TenKH)}}
+
     );
   }
   // findOne(id: number) {

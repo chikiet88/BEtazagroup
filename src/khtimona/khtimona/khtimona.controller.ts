@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { KhtimonaService } from './khtimona.service';
 import { CreateKhtimonaDto } from './dto/create-khtimona.dto';
 import { UpdateKhtimonaDto } from './dto/update-khtimona.dto';
@@ -20,6 +20,10 @@ export class KhtimonaController {
   @Get(':Chinhanh')
   findByChinhanh(@Param('Chinhanh') Chinhanh: string) {
     return this.khtimonaService.findByChinhanh(Chinhanh);
+  }
+  @Get('paged')
+  Loadmore(@Query('SDT') SDT: string) {
+      return this.khtimonaService.findBySDT(SDT);
   }
   @Get(':id')
   findOne(@Param('id') id: string) {

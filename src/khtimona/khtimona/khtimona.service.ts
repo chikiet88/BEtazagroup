@@ -10,7 +10,7 @@ export class KhtimonaService {
 
   constructor(
     @InjectRepository(KhtimonaEntity)
-    private KhtimonaRepository: Repository<KhtimonaEntity>,
+    private KhtimonaRepository: Repository<KhtimonaService>,
   ) {}
   async create(createKhtimonaDto: CreateKhtimonaDto) {
     this.KhtimonaRepository.create(createKhtimonaDto);
@@ -22,6 +22,13 @@ export class KhtimonaService {
   async findByChinhanh(Chinhanh: string) {
     return await this.KhtimonaRepository.find(
       { where :{Chinhanh:Chinhanh}}
+    );
+  }
+  async findBySDT(SDT: string) {
+    console.log(SDT);
+    
+    return await this.KhtimonaRepository.find(
+      { where :{SDT:SDT}}
     );
   }
 

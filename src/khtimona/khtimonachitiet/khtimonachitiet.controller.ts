@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { KhtimonachitietService } from './khtimonachitiet.service';
 import { CreateKhtimonachitietDto } from './dto/create-khtimonachitiet.dto';
 import { UpdateKhtimonachitietDto } from './dto/update-khtimonachitiet.dto';
@@ -16,7 +16,14 @@ export class KhtimonachitietController {
   findAll() {
     return this.khtimonachitietService.findAll();
   }
-
+  @Get('paged')
+  Loadmore(@Query('SDT') SDT: string) {
+      return this.khtimonachitietService.findBySDT(SDT);
+  }
+  @Get('paged')
+  LoadTenKH(@Query('TenKH') TenKH: string) {
+      return this.khtimonachitietService.findByTenKH(TenKH);
+  }
   // @Get(':id')
   // findOne(@Param('id') id: string) {
   //   return this.khtimonachitietService.findOne(id);

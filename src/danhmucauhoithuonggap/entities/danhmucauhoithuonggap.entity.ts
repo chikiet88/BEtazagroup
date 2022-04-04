@@ -1,24 +1,22 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeorm';
-@Entity('Cauhoithuonggap',{
+@Entity('Danhmucauhoithuonggap',{
   orderBy: {
       Ngaytao: "DESC",
   }
   })
-export class CauhoithuonggapEntity {
+export class DanhmucauhoithuonggapEntity {
     @PrimaryGeneratedColumn("uuid")
     id: string;
-    @Column({nullable: true})
-    Vitri : string;
-    @Column({nullable: true})
-    Danhmuc : string;
     @Column({type:"text",collation: "utf8_general_ci"})
-    Tieude: string;
+    idparent: string;
+    @Column({type:"text",collation: "utf8_general_ci"})
+    tieude: string;
     @Column({type:"longtext",collation: "utf8_general_ci"})
-    NoidungCauhoi: string;
+    mota: string;
     @Column({type:"longtext",collation: "utf8_general_ci"})
-    NoidungTraloi: string;
-    @Column({type:"simple-array"})
-    Cauhoituongtu: string[];
+    slug: string;
+    @Column({type:"longtext",collation: "utf8_general_ci"})
+    image: string;
     @Column({default:0})
     Trangthai:number;
     @CreateDateColumn()

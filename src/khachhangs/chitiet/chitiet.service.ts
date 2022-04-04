@@ -8,7 +8,7 @@ import { ChitietEntity } from './entities/chitiet.entity';
 export class ChitietService {
   constructor(
     @InjectRepository(ChitietEntity)
-    private ChitietRepository: Repository<ChitietEntity>,
+    private ChitietRepository: Repository<ChitietService>,
   ) {}
   async create(createChitietDto: CreateChitietDto) {
     this.ChitietRepository.create(createChitietDto);
