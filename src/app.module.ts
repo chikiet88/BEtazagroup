@@ -16,6 +16,7 @@ import { CauhoithuonggapModule } from './cauhoithuonggap/cauhoithuonggap.module'
 import { KhtimonaModule } from './khtimona/khtimona/khtimona.module';
 import { KhtimonachitietModule } from './khtimona/khtimonachitiet/khtimonachitiet.module';
 import { DanhmucauhoithuonggapModule } from './danhmucauhoithuonggap/danhmucauhoithuonggap.module';
+import { ChangelogModule } from './changelog/changelog.module';
 @Module({
   imports:
     [
@@ -61,7 +62,8 @@ import { DanhmucauhoithuonggapModule } from './danhmucauhoithuonggap/danhmucauho
       CauhoithuonggapModule,
       KhtimonaModule,
       KhtimonachitietModule,
-      DanhmucauhoithuonggapModule
+      DanhmucauhoithuonggapModule,
+      ChangelogModule
     ],
   controllers: [AppController],
   providers: [AppService],
