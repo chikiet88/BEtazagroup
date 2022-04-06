@@ -34,20 +34,6 @@ import { ChangelogModule } from './changelog/changelog.module';
         extra: {
           connectionLimit: 30
         }
-
-        // TypeOrmModule.forRoot({
-        //   type: 'mysql',
-        //   host: 'localhost',
-        //   port: 3306,
-        //   username: 'root',
-        //   password: '',
-        //   database: 'test3',
-        //   autoLoadEntities: true,
-        //   synchronize: false,
-        //   migrationsRun: true,
-        //   extra: {
-        //     connectionLimit: 30
-        // }
       }),
       UsersModule,
       AuthModule, 
