@@ -25,6 +25,10 @@ export class KhtimonaController {
   Loadmore(@Query('SDT') SDT: string) {
       return this.khtimonaService.findBySDT(SDT);
   }
+  @Get('clear')
+  Clear() {
+    return this.khtimonaService.ClearData();
+  }
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.khtimonaService.findOne(+id);

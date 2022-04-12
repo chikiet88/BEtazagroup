@@ -31,6 +31,9 @@ export class KhtimonaService {
       { where :{SDT:SDT}}
     );
   }
+  async ClearData() {    
+    return await this.KhtimonaRepository.clear();
+  }
 
   findOne(id: number) {
     return `This action returns a #${id} khtimona`;
