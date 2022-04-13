@@ -7,8 +7,8 @@ import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeor
 export class CauhoithuonggapEntity {
     @PrimaryGeneratedColumn("uuid")
     id: string;
-    @Column({nullable: true})
-    Vitri : string;
+    @Column({type:"simple-array"})
+    Vitri : string[];
     @Column({nullable: true})
     Danhmuc : string;
     @Column({type:"text",collation: "utf8_general_ci"})
