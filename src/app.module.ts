@@ -29,7 +29,7 @@ import { DanhmucModule } from './danhmuc/danhmuc.module';
         username: 'tazaspac_chikiet',
         password: '@Hikiet88',
         database: 'tazaspac_testblog',
-       // database: 'tazaspac_v2tazagroup',
+        //database: 'tazaspac_v2tazagroup',
         autoLoadEntities: true,
         synchronize: true,
         migrationsRun: true,
