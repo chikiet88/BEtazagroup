@@ -19,6 +19,8 @@ import { DanhmucauhoithuonggapModule } from './danhmucauhoithuonggap/danhmucauho
 import { ChangelogModule } from './changelog/changelog.module';
 import { BaivietModule } from './baiviet/baiviet.module';
 import { DanhmucModule } from './danhmuc/danhmuc.module';
+import { GoalsModule } from './goals/goals.module';
+import { TasksModule } from './tasks/tasks.module';
 @Module({
   imports:
     [
@@ -55,7 +57,9 @@ import { DanhmucModule } from './danhmuc/danhmuc.module';
       DanhmucauhoithuonggapModule,
       ChangelogModule,
       BaivietModule,
-      DanhmucModule
+      DanhmucModule,
+      GoalsModule,
+      TasksModule
     ],
   controllers: [AppController],
   providers: [AppService],
