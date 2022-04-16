@@ -21,6 +21,8 @@ import { BaivietModule } from './baiviet/baiviet.module';
 import { DanhmucModule } from './danhmuc/danhmuc.module';
 import { GoalsModule } from './goals/goals.module';
 import { TasksModule } from './tasks/tasks.module';
+import { SectionModule } from './section/section.module';
+import { ProjectModule } from './project/project.module';
 @Module({
   imports:
     [
@@ -59,7 +61,9 @@ import { TasksModule } from './tasks/tasks.module';
       BaivietModule,
       DanhmucModule,
       GoalsModule,
-      TasksModule
+      TasksModule,
+      SectionModule,
+      ProjectModule
     ],
   controllers: [AppController],
   providers: [AppService],
