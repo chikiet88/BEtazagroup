@@ -11,9 +11,9 @@ export class ChitietEntity {
     TenKH: string;
     @Column({collation: "utf8_general_ci"})
     Dichvu: string;
-    @Column()
+    @Column({nullable: true})
     SDT:string;
-    @Column()
+    @Column({nullable: true})
     SDT2:string;
     @Column()
     Doanhso: number;

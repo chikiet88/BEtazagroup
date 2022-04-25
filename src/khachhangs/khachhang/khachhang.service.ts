@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Like, Repository } from 'typeorm';
 import { CreateKhachhangDto } from './dto/create-khachhang.dto';
 import { UpdateKhachhangDto } from './dto/update-khachhang.dto';
 import { KhachhangEntity } from './entities/khachhang.entity';
@@ -24,10 +24,17 @@ export class KhachhangService {
       { where :{Chinhanh:Chinhanh}}
     );
   }
-  // findOne(id: number) {
-  //   return `This action returns a #${id} khachhang`;
-  // }
+  async findBySDT(SDT: string) {
+    return await this.KhachhangRepository.find(
+      { where :{SDT:SDT}}
+    );
+  }
+  async findByTenKH(TenKH: string) {
+    return await this.KhachhangRepository.find(
+      { where :{TenKH: Like(TenKH)}}
 
+    );
+  }
   update(id: number, updateKhachhangDto: UpdateKhachhangDto) {
     return `This action updates a #${id} khachhang`;
   }

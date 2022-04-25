@@ -26,6 +26,14 @@ export class ChitietController {
     ) {
     return this.chitietService.findpaged(skip,take);
   }
+  @Get('paged')
+  LoadSDT(@Query('SDT') SDT: string) {
+      return this.chitietService.findBySDT(SDT);
+  }
+  @Get('paged')
+  LoadTenKH(@Query('TenKH') TenKH: string) {
+      return this.chitietService.findByTenKH(TenKH);
+  }
   @Get(':SDT')
   findBySDT(@Param('SDT') SDT: string) {
     return this.chitietService.findBySDT(SDT);

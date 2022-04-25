@@ -9,9 +9,9 @@ export class KhtimonaEntity {
     id: string;
     @Column({collation: "utf8_general_ci"})
     TenKH: string;
-    @Column()
+    @Column({nullable: true})
     SDT:string;
-    @Column()
+    @Column({nullable: true})
     SDT2:string;
     @Column()
     Dathu: number;

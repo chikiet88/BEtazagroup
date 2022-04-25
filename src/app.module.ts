@@ -40,8 +40,8 @@ import { ProjectModule } from './project/project.module';
         extra: {
           connectionLimit: 30
         },
-        logging: true,
-        logger: "file"
+        // logging: true,
+        // logger: "file"
       }),
       UsersModule,
       AuthModule, 

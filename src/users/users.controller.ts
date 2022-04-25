@@ -31,11 +31,6 @@ import { NotiDTO } from './noti.dto';
     @Get()
     async showAllUsers() {
       return await this.usersService.showAll();
-      // return {
-      //   statusCode: HttpStatus.OK,
-      //   message: 'Users fetched successfully',
-      //   users
-      // };
     }
 
     @Post()

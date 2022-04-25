@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { ChildEntity, Repository } from 'typeorm';
+import { ChildEntity, Like, Repository } from 'typeorm';
 import { CreateChitietDto } from './dto/create-chitiet.dto';
 import { UpdateChitietDto } from './dto/update-chitiet.dto';
 import { ChitietEntity } from './entities/chitiet.entity';
@@ -36,7 +36,12 @@ export class ChitietService {
       { where :{SDT:SDT}}
     );
   }
+  async findByTenKH(TenKH: string) {
+    return await this.ChitietRepository.find(
+      { where :{TenKH: Like(TenKH)}}
 
+    );
+  }
   update(id: number, updateChitietDto: UpdateChitietDto) {
     return `This action updates a #${id} chitiet`;
   }
