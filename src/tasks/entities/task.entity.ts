@@ -9,6 +9,8 @@ export class TaskEntity {
     @PrimaryGeneratedColumn("uuid")
     id: string;
     @Column()
+    sid: string;
+    @Column()
     pid: string;
     @Column()
     gid: string;
