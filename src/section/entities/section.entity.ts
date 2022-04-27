@@ -20,6 +20,8 @@ export class SectionEntity {
     Type:string;
     @Column({default:0})
     Trangthai:number;
+    @Column({default:false})
+    IsOpen:boolean;
     @CreateDateColumn()
     Ngaytao:Date;
     @Column({nullable: true})
