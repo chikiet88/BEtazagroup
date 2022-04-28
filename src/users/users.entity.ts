@@ -23,6 +23,8 @@ export class UsersEntity {
     Phanquyen: string;
     @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
     Menu: string;
+    @Column({default:0})
+    Trangthai: number;
     @CreateDateColumn()
     Ngaytao: Date;   
     @BeforeInsert()

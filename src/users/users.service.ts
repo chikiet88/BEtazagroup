@@ -65,7 +65,6 @@ import * as bcrypt from 'bcrypt';
        return await this.usersRepository.save(data);
 
       }
-
       async findByEmail(email: string): Promise<UsersDTO> {
          return await this.usersRepository.findOne({
           where: {
