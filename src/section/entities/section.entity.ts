@@ -18,8 +18,8 @@ export class SectionEntity {
     Ordering:number;
     @Column()
     Type:string;
-    @Column({default:0})
-    Trangthai:number;
+    @Column({default:'0'})
+    Trangthai:string;
     @Column({default:false})
     IsOpen:boolean;
     @CreateDateColumn()

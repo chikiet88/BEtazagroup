@@ -10,6 +10,7 @@ export interface UsersDTO {
   Role:string;
   Phanquyen:string;
   Menu:string;
+  Trangthai:number;
 }
 export enum Role {
   Admin = 'admin',

@@ -23,6 +23,8 @@ export class TaskEntity {
     @Column({type:"simple-array"})
     Thamgia: string[];
     @Column({default:0})
+    Uutien:number;
+    @Column({default:0})
     Trangthai:number;
     @CreateDateColumn()
     Ngaytao:Date;
