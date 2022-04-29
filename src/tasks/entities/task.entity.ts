@@ -11,7 +11,7 @@ export class TaskEntity {
     @Column()
     sid: string;
     @Column()
-    pid: string;
+    pjid: string;
     @Column()
     gid: string;
     @Column({type:"text",collation: "utf8_general_ci"})

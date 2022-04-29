@@ -9,7 +9,7 @@ export class SectionEntity {
     @PrimaryGeneratedColumn("uuid")
     id: string;
     @Column()
-    projectid: string;
+    pjid: string;
     @Column({type:"text",collation: "utf8_general_ci"})
     Tieude: string;
     @Column({type:"text",collation: "utf8_general_ci"})
