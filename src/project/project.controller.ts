@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { ProjectService } from './project.service';
 import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
@@ -21,7 +21,10 @@ export class ProjectController {
   findOne(@Param('id') id: string) {
     return this.projectService.findOne(id);
   }
-
+  // @Get('paged')
+  // LoadTenKH(@Query('TenKH') TenKH: string) {
+  //     return this.projectService.findByTenKH(TenKH);
+  // }
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateProjectDto: UpdateProjectDto) {
     return this.projectService.update(id, updateProjectDto);

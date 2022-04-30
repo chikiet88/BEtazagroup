@@ -12,6 +12,8 @@ export class ProjectEntity {
     Tieude: string;
     @Column({type:"text",collation: "utf8_general_ci"})
     Mota: string;
+    @Column({type:"longtext",collation: "utf8_general_ci"})
+    Tomtat: string;
     @Column({nullable: true})
     Deadline: Date;
     @Column({type:"simple-array"})

@@ -40,12 +40,7 @@ import { NotiDTO } from './noti.dto';
 
     @Get(':id')
     async readUser(@Param('id') id: string) {
-      const data =  await this.usersService.read(id);
-      return {
-        statusCode: HttpStatus.OK,
-        message: 'User fetched successfully',
-        data,
-      };
+      return await this.usersService.read(id);
     }
 
     @Patch(':id')
