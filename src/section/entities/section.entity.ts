@@ -16,8 +16,8 @@ export class SectionEntity {
     Mota: string;
     @Column({default:0})
     Ordering:number;
-    @Column()
-    Type:string;
+    @Column({default:'project'})
+    Loai:string;
     @Column({default:'0'})
     Trangthai:string;
     @Column({default:false})
@@ -27,7 +27,4 @@ export class SectionEntity {
     @Column({nullable: true})
     idTao:string;   
  }
- export enum Type {
-  Project = 'project',
-  Task = 'task',
-}
+ 

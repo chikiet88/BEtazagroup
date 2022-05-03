@@ -20,6 +20,11 @@ export class ProjectService {
   async findOne(id: string) {
     return await this.ProjectRepository.findOne({ where: { id: id } });
   }
+  // async findByTenKH(Type) {
+  //   return await this.ProjectRepository.find(
+  //     { where :{Type:Type}}
+  //   );
+  // }
   async update(id: string, updateProjectDto: UpdateProjectDto) {
     await this.ProjectRepository.update(id, updateProjectDto);
     return await this.ProjectRepository.findOne({ where: { id: id } });

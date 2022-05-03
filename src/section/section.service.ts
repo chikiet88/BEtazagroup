@@ -1,10 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Like, Repository } from 'typeorm';
 import { CreateSectionDto } from './dto/create-section.dto';
 import { UpdateSectionDto } from './dto/update-section.dto';
 import { SectionEntity } from './entities/section.entity';
-
 @Injectable()
 export class SectionService {
   constructor(
@@ -20,6 +19,9 @@ export class SectionService {
   }
   async findOne(id: string) {
     return await this.SectionRepository.findOne({ where: { id: id } });
+  }
+  async findLoai(Loai:string) {
+    return await this.SectionRepository.find({ where: { Loai: Loai} });
   }
   async update(id: string, updateSectionDto: UpdateSectionDto) {
     await this.SectionRepository.update(id, updateSectionDto);

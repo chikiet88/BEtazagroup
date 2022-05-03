@@ -29,16 +29,10 @@ export class KhtimonaController {
   Clear() {
     return this.khtimonaService.ClearData();
   }
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.khtimonaService.findOne(+id);
-  }
-
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateKhtimonaDto: UpdateKhtimonaDto) {
     return this.khtimonaService.update(+id, updateKhtimonaDto);
   }
-
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.khtimonaService.remove(+id);

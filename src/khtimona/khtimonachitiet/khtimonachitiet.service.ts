@@ -32,7 +32,6 @@ export class KhtimonachitietService {
   async findByTenKH(TenKH: string) {
     return await this.KhtimonachitietRepository.find(
       { where :{TenKH: Like(TenKH)}}
-
     );
   }
   // findOne(id: number) {
