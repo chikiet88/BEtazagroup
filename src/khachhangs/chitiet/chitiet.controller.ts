@@ -27,6 +27,13 @@ export class ChitietController {
     return this.chitietService.findpaged(skip,take);
   }
   @Get('paged')
+  LoadByDay(
+    @Query('batdau') batdau: Date,
+    @Query('kethuc') kethuc: Date,
+    ) {
+      return this.chitietService.findByDay(batdau,kethuc);
+  }
+  @Get('paged')
   LoadSDT(@Query('SDT') SDT: string) {
       return this.chitietService.findBySDT(SDT);
   }

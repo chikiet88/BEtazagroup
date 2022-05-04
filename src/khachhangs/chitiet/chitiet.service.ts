@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { ChildEntity, Like, Repository } from 'typeorm';
+import { Between, ChildEntity, Like, Repository } from 'typeorm';
 import { CreateChitietDto } from './dto/create-chitiet.dto';
 import { UpdateChitietDto } from './dto/update-chitiet.dto';
 import { ChitietEntity } from './entities/chitiet.entity';
@@ -34,6 +34,13 @@ export class ChitietService {
   async findBySDT(SDT: string) {
     return await this.ChitietRepository.find(
       { where :{SDT:SDT}}
+    );
+  }
+  async findByDay(batdau,kethuc) {
+    const bd = new Date(batdau);
+    const kt = new Date(kethuc);
+  return await this.ChitietRepository.find(
+      { where :{NgayTaoDV: Between(bd, kt)}}
     );
   }
   async findByTenKH(TenKH: string) {
