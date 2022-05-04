@@ -22,7 +22,7 @@ export class TaskEntity {
     Deadline: Date;
     @Column({type:"simple-array"})
     Thamgia: string[];
-    @Column({default:0})
+    @Column({default:1})
     Uutien:number;
     @Column({default:0})
     Trangthai:number;

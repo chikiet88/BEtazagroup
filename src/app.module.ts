@@ -6,7 +6,6 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CauhinhModule } from './cauhinh/cauhinh.module';
 import { VetuyendungModule } from './vetuyendung/vetuyendung.module';
-import { ThongkekhModule } from './thongkekh/thongkekh.module';
 import { LichhopModule } from './lichhop/lichhop.module';
 import { NotificationModule } from './notification/notification.module';
 import { KhachhangModule } from './khachhangs/khachhang/khachhang.module';
@@ -47,7 +46,6 @@ import { ProjectModule } from './project/project.module';
       AuthModule, 
       CauhinhModule,
       VetuyendungModule,
-      ThongkekhModule, 
       LichhopModule,
       NotificationModule, 
       KhachhangModule, 
