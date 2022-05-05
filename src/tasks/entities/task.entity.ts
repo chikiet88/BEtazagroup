@@ -20,8 +20,8 @@ export class TaskEntity {
     Mota: string;
     @Column({nullable: true})
     Deadline: Date;
-    @Column({type:"simple-array"})
-    Thamgia: string[];
+    @Column()
+    Thuchien: string;
     @Column({default:1})
     Uutien:number;
     @Column({default:0})
