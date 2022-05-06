@@ -52,8 +52,8 @@ export class ChitietService {
   update(id: number, updateChitietDto: UpdateChitietDto) {
     return `This action updates a #${id} chitiet`;
   }
-
-  remove(id: number) {
-    return `This action removes a #${id} chitiet`;
-  }
+  async remove(id: string) {
+    await this.ChitietRepository.delete(id);
+    return { deleted: true };
+  } 
 }

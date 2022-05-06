@@ -53,6 +53,6 @@ export class ChitietController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.chitietService.remove(+id);
+    return this.chitietService.remove(id);
   }
 }
