@@ -42,7 +42,7 @@ export class ChitietController {
   }
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateChitietDto: UpdateChitietDto) {
-    return this.chitietService.update(+id, updateChitietDto);
+    return this.chitietService.update(id, updateChitietDto);
   }
 
   @Delete(':id')

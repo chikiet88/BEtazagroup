@@ -22,11 +22,11 @@ export class KhtimonachitietController {
   }
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateKhtimonachitietDto: UpdateKhtimonachitietDto) {
-    return this.khtimonachitietService.update(+id, updateKhtimonachitietDto);
+    return this.khtimonachitietService.update(id, updateKhtimonachitietDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.khtimonachitietService.remove(+id);
+    return this.khtimonachitietService.remove(id);
   }
 }

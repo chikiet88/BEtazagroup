@@ -52,8 +52,9 @@ export class ChitietService {
 
     );
   }
-  update(id: number, updateChitietDto: UpdateChitietDto) {
-    return `This action updates a #${id} chitiet`;
+  async update(id: string, updateChitietDto: UpdateChitietDto) {
+    await this.ChitietRepository.update(id, updateChitietDto);
+    return await this.ChitietRepository.findOne({ where: { id: id } });
   }
   async remove(id: string) {
     await this.ChitietRepository.delete(id);

@@ -34,12 +34,13 @@ export class KhtimonachitietService {
       { where :{TenKH: Like(TenKH)}}
     );
   }
-  
-  update(id: number, updateKhtimonachitietDto: UpdateKhtimonachitietDto) {
-    return `This action updates a #${id} Khtimonachitiet`;
-  }
 
-  remove(id: number) {
-    return `This action removes a #${id} Khtimonachitiet`;
+  async update(id: string, updateKhtimonachitietDto: UpdateKhtimonachitietDto) {
+    await this.KhtimonachitietRepository.update(id, updateKhtimonachitietDto);
+    return await this.KhtimonachitietRepository.findOne({ where: { id: id } });
   }
+  async remove(id: string) {
+    await this.KhtimonachitietRepository.delete(id);
+    return { deleted: true };
+  } 
 }
