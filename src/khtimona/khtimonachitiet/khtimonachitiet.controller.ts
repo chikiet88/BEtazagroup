@@ -17,18 +17,9 @@ export class KhtimonachitietController {
     return this.khtimonachitietService.findAll();
   }
   @Get('paged')
-  Loadmore(@Query('SDT') SDT: string) {
-      return this.khtimonachitietService.findBySDT(SDT);
+  Loadmore(@Query('Chinhanh') Chinhanh: string) {
+      return this.khtimonachitietService.findByChinhanh(Chinhanh);
   }
-  @Get('paged')
-  LoadTenKH(@Query('TenKH') TenKH: string) {
-      return this.khtimonachitietService.findByTenKH(TenKH);
-  }
-  // @Get(':id')
-  // findOne(@Param('id') id: string) {
-  //   return this.khtimonachitietService.findOne(id);
-  // }
-
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateKhtimonachitietDto: UpdateKhtimonachitietDto) {
     return this.khtimonachitietService.update(+id, updateKhtimonachitietDto);

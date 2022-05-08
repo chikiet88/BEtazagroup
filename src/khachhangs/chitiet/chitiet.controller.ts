@@ -21,10 +21,9 @@ export class ChitietController {
   }
   @Get('paged')
   Loadmore(
-    @Query('take') take: number,
-    @Query('skip') skip: number,
+    @Query('Chinhanh') Chinhanh: string,
     ) {
-    return this.chitietService.findpaged(skip,take);
+    return this.chitietService.findByChinhanh(Chinhanh);
   }
   @Get('paged')
   LoadByDay(
@@ -41,11 +40,6 @@ export class ChitietController {
   LoadTenKH(@Query('TenKH') TenKH: string) {
       return this.chitietService.findByTenKH(TenKH);
   }
-  @Get(':SDT')
-  findBySDT(@Param('SDT') SDT: string) {
-    return this.chitietService.findBySDT(SDT);
-  }
-
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateChitietDto: UpdateChitietDto) {
     return this.chitietService.update(+id, updateChitietDto);

@@ -19,14 +19,14 @@ export class KhtimonachitietService {
   async findAll() {
     return await this.KhtimonachitietRepository.find();
   }
+  async findBySDT(SDT: string) {
+    return await this.KhtimonachitietRepository.find(
+      { where :{Chinhanh:SDT}}
+    );
+  }
   async findByChinhanh(Chinhanh: string) {
     return await this.KhtimonachitietRepository.find(
       { where :{Chinhanh:Chinhanh}}
-    );
-  }
-  async findBySDT(SDT: string) {
-    return await this.KhtimonachitietRepository.find(
-      { where :{SDT:SDT}}
     );
   }
   async findByTenKH(TenKH: string) {
@@ -34,10 +34,7 @@ export class KhtimonachitietService {
       { where :{TenKH: Like(TenKH)}}
     );
   }
-  // findOne(id: number) {
-  //   return `This action returns a #${id} Khtimonachitiet`;
-  // }
-
+  
   update(id: number, updateKhtimonachitietDto: UpdateKhtimonachitietDto) {
     return `This action updates a #${id} Khtimonachitiet`;
   }

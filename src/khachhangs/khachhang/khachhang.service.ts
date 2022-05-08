@@ -35,6 +35,7 @@ export class KhachhangService {
 
     );
   }
+  
   update(id: number, updateKhachhangDto: UpdateKhachhangDto) {
     return `This action updates a #${id} khachhang`;
   }

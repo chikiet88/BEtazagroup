@@ -16,9 +16,6 @@ export class ChitietService {
   }
   async findAll() {
     return await this.ChitietRepository.find();
-    // return await this.ChitietRepository.find({ 
-    //   take:1000,
-    //   skip:0 });
   }
   async findpaged(skip:number=0,take: number = 10) {
     const [data, total] = await this.ChitietRepository.findAndCount(
@@ -46,6 +43,12 @@ export class ChitietService {
   async findByTenKH(TenKH: string) {
     return await this.ChitietRepository.find(
       { where :{TenKH: Like(TenKH)}}
+
+    );
+  }
+  async findByChinhanh(Chinhanh: string) {
+    return await this.ChitietRepository.find(
+      { where :{Chinhanh: Chinhanh}}
 
     );
   }
