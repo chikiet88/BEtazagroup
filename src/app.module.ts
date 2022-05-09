@@ -22,6 +22,7 @@ import { GoalsModule } from './goals/goals.module';
 import { TasksModule } from './tasks/tasks.module';
 import { SectionModule } from './section/section.module';
 import { ProjectModule } from './project/project.module';
+import { GrouptaskModule } from './grouptask/grouptask.module';
 @Module({
   imports:
     [
@@ -61,7 +62,8 @@ import { ProjectModule } from './project/project.module';
       GoalsModule,
       TasksModule,
       SectionModule,
-      ProjectModule
+      ProjectModule,
+      GrouptaskModule
     ],
   controllers: [AppController],
   providers: [AppService],

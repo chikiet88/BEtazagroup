@@ -1,15 +1,13 @@
-export class Section {}
+export class Grouptask {}
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeorm';
-@Entity('Section',{
+@Entity('Grouptask',{
   orderBy: {
       Ngaytao: "DESC",
   }
   })
-export class SectionEntity {
+export class GrouptaskEntity {
     @PrimaryGeneratedColumn("uuid")
     id: string;
-    @Column()
-    pjid: string;
     @Column({type:"text",collation: "utf8_general_ci"})
     Tieude: string;
     @Column({type:"text",collation: "utf8_general_ci"})
