@@ -2,7 +2,7 @@ export class Grouptask {}
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeorm';
 @Entity('Grouptask',{
   orderBy: {
-      Ngaytao: "DESC",
+      Ngaytao: "ASC",
   }
   })
 export class GrouptaskEntity {

@@ -28,7 +28,7 @@ export class GrouptaskService {
     return await this.GrouptaskRepository.findOne({ where: { id: id } });
   }
   async remove(id: string) {
-    await this.GrouptaskRepository.delete(id);
+    await this.GrouptaskRepository.delete(id); 
     return { deleted: true };
   }
 }
