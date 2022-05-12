@@ -19,6 +19,10 @@ export class TaskEntity {
     @Column({type:"text",collation: "utf8_general_ci"})
     Mota: string;
     @Column({nullable: true})
+    Batdau: Date;
+    @Column({nullable: true})
+    Ketthuc: Date;
+    @Column({nullable: true})
     Deadline: Date;
     @Column()
     Thuchien: string;
