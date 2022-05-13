@@ -18,6 +18,10 @@ export class SectionController {
   findLoai(@Query('Loai') Loai: string) {
     return this.sectionService.findLoai(Loai);
   }
+  @Get('/user/:id')
+  findbyUser(@Param('id') id: string) {
+    return this.sectionService.findbyUser(id);
+  }
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateSectionDto: UpdateSectionDto) {
     return this.sectionService.update(id, updateSectionDto);

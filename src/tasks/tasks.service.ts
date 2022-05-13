@@ -20,6 +20,14 @@ export class TasksService {
   async findOne(id: string) {
     return await this.TaskRepository.findOne({ where: { id: id } });
   }
+  async findbyUser(id: string) {
+    return await this.TaskRepository.find({ where: 
+      [
+        { idTao: id },
+        { Thuchien: id }
+      ]
+    });
+  }
   async update(id: string, updateTaskDto: UpdateTaskDto) {
     await this.TaskRepository.update(id, updateTaskDto);
     return await this.TaskRepository.findOne({ where: { id: id } });

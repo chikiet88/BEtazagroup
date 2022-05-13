@@ -16,7 +16,10 @@ export class ProjectController {
   findAll() {
     return this.projectService.findAll();
   }
-
+  @Get('/user/:id')
+  findbyUser(@Param('id') id: string) {
+    return this.projectService.findbyUser(id);
+  }
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.projectService.findOne(id);

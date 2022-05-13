@@ -21,7 +21,10 @@ export class GrouptaskController {
   findOne(@Param('id') id: string) {
     return this.grouptaskService.findOne(id);
   }
-
+  @Get('/user/:id')
+  findbyUser(@Param('id') id: string) {
+    return this.grouptaskService.findbyUser(id);
+  }
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateGrouptaskDto: UpdateGrouptaskDto) {
     return this.grouptaskService.update(id, updateGrouptaskDto);

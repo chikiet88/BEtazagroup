@@ -20,6 +20,9 @@ export class SectionService {
   async findOne(id: string) {
     return await this.SectionRepository.findOne({ where: { id: id } });
   }
+  async findbyUser(id: string) {
+    return await this.SectionRepository.find({ where: { idTao: id }});
+  }
   async findLoai(Loai:string) {
     return await this.SectionRepository.find({ where: { Loai: Loai} });
   }

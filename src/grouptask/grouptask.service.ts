@@ -17,6 +17,9 @@ export class GrouptaskService {
   async findAll() {
     return await this.GrouptaskRepository.find();
   }
+  async findbyUser(id: string) {
+    return await this.GrouptaskRepository.find({ where:{ idTao: id }});
+  }
   async findOne(id: string) {
     return await this.GrouptaskRepository.findOne({ where: { id: id } });
   }
