@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, Index, CreateDateColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, Index, CreateDateColumn, OneToOne, JoinColumn } from 'typeorm';
 import { Role } from './users.dto';
 @Entity("users",{orderBy: {Ngaytao: "DESC"}})
 export class UsersEntity {
@@ -18,7 +18,6 @@ export class UsersEntity {
     profile: string;
     @Column({type: 'enum', enum: Role, default: Role.User})
     Role: string;
-    //@Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{Chinhanh:[],Menu:[]}')" })
     @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
     Phanquyen: string;
     @Column({collation: "utf8_general_ci",type:"simple-json",default: () => "('{}')" })
@@ -30,5 +29,5 @@ export class UsersEntity {
     @BeforeInsert()
     emailToLowerCase() {
         this.email = this.email.toLowerCase();
-    }
+    }  
  }

@@ -7,6 +7,7 @@ import {
     Body,
     Param,
     HttpStatus,
+    Request,
     HttpException,
   } from '@nestjs/common';
 
@@ -42,9 +43,8 @@ import { NotiDTO } from './noti.dto';
     async readUser(@Param('id') id: string) {
       return await this.usersService.read(id);
     }
-
     @Patch(':id')
-    async uppdateUser(@Param('id') id: string, @Body() data: Partial<UsersDTO>) {
+    async uppdateUser(@Param('id') id: string, @Body() data: UsersDTO) {
       return await this.usersService.update(id, data);
     }
 

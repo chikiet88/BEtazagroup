@@ -17,7 +17,10 @@ export class AuthController {
     @Post('login')
     async login(@Body() data: UsersDTO) {
       return await this.authService.authentication(data.SDT,data.password);   
-
+    }
+    @Post('changepass')
+    async changepass(@Body() data: any) {
+      return await this.authService.changepass(data);   
     }
     @Post('signbytoken')
     async signbytoken(@Body() access_token: any) { 

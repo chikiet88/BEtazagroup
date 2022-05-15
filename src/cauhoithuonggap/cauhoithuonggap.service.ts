@@ -25,7 +25,6 @@ export class CauhoithuonggapService {
     await this.CauhoiRepository.update(id, updateCauhoithuonggapDto);
     return await this.CauhoiRepository.findOne({ where: { id: id } });
   }
-
   async remove(id: string) {
     await this.CauhoiRepository.delete(id);
     return { deleted: true };

@@ -14,8 +14,6 @@ export class AuthService {
       async hashPassword(password: string): Promise<string> {
         return await bcrypt.hash(password, 12);
       }
-      
-     //function compare password param with user password in database
       async comparePassword(
         password: string,
         storePasswordHash: string,
@@ -23,7 +21,7 @@ export class AuthService {
         return await bcrypt.compare(password, storePasswordHash);
       }
     
-      async authentication(SDT: string, password: string): Promise<any> {
+    async authentication(SDT: string, password: string): Promise<any> {
         const user = await this.usersService.findBySDT(SDT);
         if (!user) {
           return 1;
@@ -32,8 +30,20 @@ export class AuthService {
         if (!check) {
           return 2;
         }
-        else { return this.login(user);}
-        //return user;
+
+       else { return this.login(user);}
+      }
+      async changepass(data): Promise<any>{
+        const user = await this.usersService.findBySDT(data.user.SDT);
+        const check = await this.comparePassword(data.oldpass, user.password);
+        if (!check) {
+          return 1;
+        }
+        else
+        {
+          user.password  = await this.usersService.setPassword(data.newpass);
+          return await this.usersService.update(user.id,user);
+        }
       }
       async validateUser(email: string, password: string): Promise<any> {
         const user = await this.usersService.findByEmail(email);
@@ -49,7 +59,7 @@ export class AuthService {
         const payload:any = {
           SDT: user.SDT,
           email: user.email,
-        };
+        };  
       return { access_token: this.jwtService.sign(payload),user };
       }
       async signbytoken(token: any) {

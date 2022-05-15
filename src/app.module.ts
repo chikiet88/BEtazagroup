@@ -23,6 +23,7 @@ import { TasksModule } from './tasks/tasks.module';
 import { SectionModule } from './section/section.module';
 import { ProjectModule } from './project/project.module';
 import { GrouptaskModule } from './grouptask/grouptask.module';
+import { ProfileModule } from './profile/profile.module';
 @Module({
   imports:
     [
@@ -50,7 +51,7 @@ import { GrouptaskModule } from './grouptask/grouptask.module';
       LichhopModule,
       NotificationModule, 
       KhachhangModule, 
-      ChitietModule, 
+      ChitietModule,
       NavigationModule, 
       CauhoithuonggapModule,
       KhtimonaModule,
@@ -63,7 +64,8 @@ import { GrouptaskModule } from './grouptask/grouptask.module';
       TasksModule,
       SectionModule,
       ProjectModule,
-      GrouptaskModule
+      GrouptaskModule,
+      ProfileModule,
     ],
   controllers: [AppController],
   providers: [AppService],
