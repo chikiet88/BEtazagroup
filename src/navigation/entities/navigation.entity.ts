@@ -14,7 +14,7 @@ export class NavigationEntity {
     icon: string;
     @Column()
     link: string;
-    @Column()
+    @Column({default:0})
     parent: string
     @Column()
     level: number

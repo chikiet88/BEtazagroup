@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { In, Repository } from 'typeorm';
+import { In, Like, Repository } from 'typeorm';
 import { CreateLichhopDto } from './dto/create-lichhop.dto';
 import { UpdateLichhopDto } from './dto/update-lichhop.dto';
 import { Lichhop } from './entities/lichhop.entity';
@@ -21,7 +21,7 @@ export class LichhopService {
   }
   async findWhere(id:string) {
     return await this.LichhopsRepository.findOne({
-      where: [{Chutri: id},{Thamgia: In([id])}]
+      where: [{Chutri: id},{Thamgia: Like("%"+id+"%")}]
    })
   }
   async findOne(id: string) {
