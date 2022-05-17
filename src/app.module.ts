@@ -24,6 +24,7 @@ import { SectionModule } from './section/section.module';
 import { ProjectModule } from './project/project.module';
 import { GrouptaskModule } from './grouptask/grouptask.module';
 import { ProfileModule } from './profile/profile.module';
+import { UploadModule } from './upload/upload.module';
 @Module({
   imports:
     [
@@ -66,6 +67,7 @@ import { ProfileModule } from './profile/profile.module';
       ProjectModule,
       GrouptaskModule,
       ProfileModule,
+      UploadModule,
     ],
   controllers: [AppController],
   providers: [AppService],
