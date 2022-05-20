@@ -24,6 +24,8 @@ export class ProjectEntity {
     Ordering:number;
     @Column({default:0})
     Trangthai:number;
+    @Column({default:0})
+    selectedIndex:number;
     @CreateDateColumn()
     Ngaytao:Date;
     @Column({nullable: true})
