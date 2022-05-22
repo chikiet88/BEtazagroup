@@ -1,26 +1,31 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateUploadDto } from './dto/create-upload.dto';
 import { UpdateUploadDto } from './dto/update-upload.dto';
-
+import { UploadEntity } from './entities/upload.entity';
 @Injectable()
 export class UploadService {
-  create(createUploadDto: CreateUploadDto) {
-    return 'This action adds a new upload';
+  constructor(
+    @InjectRepository(UploadEntity)
+    private UploadRepository: Repository<UploadService>,
+  ) {}
+  async create(createUploadDto: CreateUploadDto) {
+    this.UploadRepository.create(createUploadDto);
+    return await this.UploadRepository.save(createUploadDto);
   }
-
-  findAll() {
-    return `This action returns all upload`;
+  async findAll() {
+    return await this.UploadRepository.find();
   }
-
-  findOne(id: number) {
-    return `This action returns a #${id} upload`;
+  async findOne(id: string) {
+    return await this.UploadRepository.findOne({ where: { id: id } });
   }
-
-  update(id: number, updateUploadDto: UpdateUploadDto) {
-    return `This action updates a #${id} upload`;
+  async update(id: string, updateUploadDto: UpdateUploadDto) {
+    await this.UploadRepository.update(id, updateUploadDto);
+    return await this.UploadRepository.findOne({ where: { id: id } });
   }
-
-  remove(id: number) {
-    return `This action removes a #${id} upload`;
+  async remove(id: string) {
+    await this.UploadRepository.delete(id);
+    return { deleted: true };
   }
 }
