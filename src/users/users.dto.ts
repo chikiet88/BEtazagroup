@@ -17,4 +17,5 @@ export enum Role {
   Manager = 'manager',
   User = 'user',
   Dev = 'dev',
+  Iso = 'iso',
 }

@@ -20,7 +20,9 @@ export class DanhmucEntity {
     @Column({type:"longtext",collation: "utf8_general_ci"})
     Image: string;
     @Column({default:0})
-    Type:number;
+    Module:number;
+    @Column({nullable:true})
+    Type:string;
     @Column({default:0})
     Trangthai:number;
     @CreateDateColumn()
