@@ -14,8 +14,8 @@ export class UploadEntity {
     Tieude: string;
     @Column({type:"text",collation: "utf8_general_ci"})
     Mota: string;
-    @Column({nullable: true})
-    Lienket: Date;
+    @Column({type:"text",collation: "utf8_general_ci"})
+    Lienket: string;
     @CreateDateColumn()
     Ngaytao:Date;
     @Column({nullable: true})
