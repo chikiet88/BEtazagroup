@@ -16,8 +16,8 @@ export const imageFileFilter = (req, file, callback) => {
 export const editFileName = (req, file, callback) => {
   const name = file.originalname.split('.')[0];
   const fileExtName = extname(file.originalname);
-    const randomName = new Date().getTime();
-  callback(null, `${name}-${randomName}${fileExtName}`);
+  const randomName = new Date().getTime();
+  callback(null, `${name}_${randomName}${fileExtName}`);
 };
 
 @Controller('upload')
