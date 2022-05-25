@@ -5,16 +5,16 @@ import { UpdateUploadDto } from './dto/update-upload.dto';
 import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
 import { extname } from 'path';
 import { diskStorage } from 'multer';
-
+const fs = require('fs')
 export const imageFileFilter = (req, file, callback) => {
   if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
     return callback(new Error('Only image files are allowed!'), false);
   }
   callback(null, true);
 };
-
 export const editFileName = (req, file, callback) => {
-  const name = file.originalname.split('.')[0];
+ const filename = file.originalname.split('.')[0];
+  const name = filename.replaceAll(' ', '-');
   const fileExtName = extname(file.originalname);
   const randomName = new Date().getTime();
   callback(null, `${name}_${randomName}${fileExtName}`);
@@ -34,15 +34,26 @@ export class UploadController {
     }),
   )
   async uploadedFile(@UploadedFile() file) {
-    const response = {
+      const response = {
       originalname: file.originalname,
       filename: file.filename,
+      Exten : extname(file.originalname)
     };
     return response;
   }
   @Get('path/:imgpath')
   seeUploadedFile(@Param('imgpath') image, @Res() res) {
     return res.sendFile(image, { root: './upfiles' });
+  }
+  @Delete('path/:imgpath')
+  DeleteFile(@Param('imgpath') image, @Res() res) {
+        const path = `./upfiles/${image}`;
+        try {
+          fs.unlinkSync(path)
+          //file removed
+        } catch(err) {
+          console.error(err)
+        }
   }
   @Get()
   findAll() {
@@ -60,7 +71,6 @@ export class UploadController {
   update(@Param('id') id: string, @Body() updateUploadDto: UpdateUploadDto) {
     return this.uploadService.update(id, updateUploadDto);
   }
-
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.uploadService.remove(id);
