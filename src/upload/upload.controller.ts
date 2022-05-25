@@ -14,10 +14,9 @@ export const imageFileFilter = (req, file, callback) => {
 };
 export const editFileName = (req, file, callback) => {
  const filename = file.originalname.split('.')[0];
-  const name = filename.replaceAll(' ', '-');
   const fileExtName = extname(file.originalname);
   const randomName = new Date().getTime();
-  callback(null, `${name}_${randomName}${fileExtName}`);
+  callback(null, `${filename}_${randomName}${fileExtName}`);
 };
 
 @Controller('upload')
@@ -34,12 +33,9 @@ export class UploadController {
     }),
   )
   async uploadedFile(@UploadedFile() file) {
-      const response = {
-      originalname: file.originalname,
-      filename: file.filename,
-      Exten : extname(file.originalname)
-    };
-    return response;
+   // console.error(file);
+   // const response = {originalname:file.originalname,filename: file.filename,Exten : extname(file.originalname)};
+    return file;
   }
   @Get('path/:imgpath')
   seeUploadedFile(@Param('imgpath') image, @Res() res) {
@@ -48,12 +44,15 @@ export class UploadController {
   @Delete('path/:imgpath')
   DeleteFile(@Param('imgpath') image, @Res() res) {
         const path = `./upfiles/${image}`;
-        try {
+        if (fs.existsSync(path)) {
           fs.unlinkSync(path)
-          //file removed
-        } catch(err) {
-          console.error(err)
-        }
+          return true
+       }
+       else 
+       {
+        console.error(false)
+         return false
+       }
   }
   @Get()
   findAll() {
