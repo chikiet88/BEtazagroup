@@ -25,6 +25,7 @@ import { ProjectModule } from './project/project.module';
 import { GrouptaskModule } from './grouptask/grouptask.module';
 import { ProfileModule } from './profile/profile.module';
 import { UploadModule } from './upload/upload.module';
+import { TailieunguonModule } from './tailieunguon/tailieunguon.module';
 @Module({
   imports:
     [
@@ -34,8 +35,8 @@ import { UploadModule } from './upload/upload.module';
         port: 3306,
         username: 'tazaspac_chikiet',
         password: '@Hikiet88',
-        database: 'tazaspac_testblog',
-       // database: 'tazaspac_v2tazagroup',
+       // database: 'tazaspac_testblog',
+        database: 'tazaspac_v2tazagroup',
         autoLoadEntities: true,
         synchronize: true,
         migrationsRun: true,
@@ -68,6 +69,7 @@ import { UploadModule } from './upload/upload.module';
       GrouptaskModule,
       ProfileModule,
       UploadModule,
+      TailieunguonModule,
     ],
   controllers: [AppController],
   providers: [AppService],
