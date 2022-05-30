@@ -12,7 +12,7 @@ export class TailieunguonEntity {
     idDM: string;
     @Column({type:"text",collation: "utf8_general_ci"})
     Tieude: string;
-    @Column({type:"simple-array",default: () => "('[]')"})
+    @Column({type:"simple-array"})
     Tags: string[];
     @Column({nullable: true})
     DKTK:Date;
@@ -22,9 +22,9 @@ export class TailieunguonEntity {
     Noidung: string;
     @Column({type:"longtext",collation: "utf8_general_ci"})
     Ghichu: string;
-    @Column({type:"simple-array",default: () => "('[]')"})
+    @Column({type:"simple-array"})
     Tacgia: string[]
-    @Column({type:"simple-array",default: () => "('[]')"})
+    @Column({type:"simple-array"})
     Kiemduyet: string[]
     @CreateDateColumn()
     Ngaytao:Date;

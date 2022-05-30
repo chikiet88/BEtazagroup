@@ -14,7 +14,6 @@ import { NavigationModule } from './navigation/navigation.module';
 import { CauhoithuonggapModule } from './cauhoithuonggap/cauhoithuonggap.module';
 import { KhtimonaModule } from './khtimona/khtimona/khtimona.module';
 import { KhtimonachitietModule } from './khtimona/khtimonachitiet/khtimonachitiet.module';
-import { DanhmucauhoithuonggapModule } from './danhmucauhoithuonggap/danhmucauhoithuonggap.module';
 import { ChangelogModule } from './changelog/changelog.module';
 import { BaivietModule } from './baiviet/baiviet.module';
 import { DanhmucModule } from './danhmuc/danhmuc.module';
@@ -58,7 +57,6 @@ import { TailieunguonModule } from './tailieunguon/tailieunguon.module';
       CauhoithuonggapModule,
       KhtimonaModule,
       KhtimonachitietModule,
-      DanhmucauhoithuonggapModule,
       ChangelogModule,
       BaivietModule,
       DanhmucModule,

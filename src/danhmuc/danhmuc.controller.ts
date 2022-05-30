@@ -21,6 +21,10 @@ export class DanhmucController {
   findOne(@Param('id') id: string) {
     return this.danhmucService.findOne(id);
   }
+  @Get('module/:id')
+  findBymodule(@Param('id') id: string) {
+    return this.danhmucService.findByModule(id);
+  }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateDanhmucDto: UpdateDanhmucDto) {

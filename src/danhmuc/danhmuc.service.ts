@@ -21,6 +21,9 @@ export class DanhmucService {
   async findOne(id: string) {
     return await this.DanhmucRepository.findOne({ where: { id: id } });
   }
+  async findByModule(id: string) {
+    return await this.DanhmucRepository.find({ where: { Module: id } });
+  }
   async update(id: string, updateDanhmucDto: UpdateDanhmucDto) {
     await this.DanhmucRepository.update(id, updateDanhmucDto);
     return await this.DanhmucRepository.findOne({ where: { id: id } });
