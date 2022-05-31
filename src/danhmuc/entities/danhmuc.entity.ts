@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeorm';
 @Entity('Danhmuc',{
   orderBy: {
-      Ngaytao: "DESC",
+      Ngaytao: "ASC",
   }
   })
 export class DanhmucEntity {
