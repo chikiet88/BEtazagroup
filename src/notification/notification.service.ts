@@ -86,10 +86,12 @@ export class SubscriberService {
       "notification": {
           "title": data.Tieude,
           "body": data.Noidung,
-          "link":data.Lienket,
           "icon": "https://v2.tazagroup.vn/assets/images/logo/logo.png",
           "vibrate": [100, 50, 100],
           "data": {
+              "onActionClick": {
+                "default": {"operation": "openWindow", "url": data.Lienket}
+              },
               "dateOfArrival": Date.now(),
               "primaryKey": 1,
           },

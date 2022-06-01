@@ -15,7 +15,8 @@ export class NotificationController {
   }
   @Get('subscriber')
   getSubscriber() {
-    return this.subscriberService.sendTest();
+    return this.subscriberService.findAll();
+    //return this.subscriberService.sendTest();
   }
   @Post()
   create(@Body() createNotificationDto: CreateNotificationDto) {
