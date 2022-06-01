@@ -20,7 +20,10 @@ export class NotificationController {
   @Post()
   create(@Body() createNotificationDto: CreateNotificationDto) {
     this.subscriberService.sendnoti(createNotificationDto);
+    console.error(this.notificationService.create(createNotificationDto));
+    
     return this.notificationService.create(createNotificationDto);
+
   }
 
   @Get()
