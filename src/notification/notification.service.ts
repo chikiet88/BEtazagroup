@@ -104,7 +104,6 @@ export class SubscriberService {
   console.error(user);
     user.forEach(v => {
     webpush.sendNotification(v['Subscription'], JSON.stringify(notificationPayload))});
-  return user  
   }
   async findAll() {
     return await this.SubscriberRepository.find();
