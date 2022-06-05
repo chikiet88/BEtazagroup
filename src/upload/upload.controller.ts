@@ -33,6 +33,8 @@ export class UploadController {
     }),
   )
   async uploadedFile(@UploadedFile() file) {
+    console.error(file);
+    
    // console.error(file);
    // const response = {originalname:file.originalname,filename: file.filename,Exten : extname(file.originalname)};
     return file;
