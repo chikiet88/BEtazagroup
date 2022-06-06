@@ -41,9 +41,10 @@ export class NotificationService {
     return await this.NotificatiRepository.findOne({ where: { id: id } });
   }
 
-  remove(id: string) {
-    return `This action removes a #${id} notification`;
-  }
+  async remove(id: string) {
+    await this.NotificatiRepository.delete(id);
+    return { deleted: true };
+  } 
 }
 @Injectable()
 export class SubscriberService {
@@ -126,4 +127,5 @@ export class SubscriberService {
   remove(id: string) {
     return `This action removes a #${id} notification`;
   }
+  
 }
