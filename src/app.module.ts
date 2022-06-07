@@ -40,7 +40,10 @@ import { TailieunguonModule } from './tailieunguon/tailieunguon.module';
         synchronize: true,
         migrationsRun: true,
         extra: {
-          connectionLimit: 30
+          connectionLimit: 10000,
+          acquireTimeout: 10000,
+          waitForConnections: true,
+          queueLimit: 0,
         },
         // logging: true,
         // logger: "file"
