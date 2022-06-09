@@ -10,9 +10,7 @@ export class TaskEntity {
     id: string;
     @Column()
     sid: string;
-    @Column()
-    // pjid: string;
-    // @Column()
+    @Column({default:0})
     gid: string;
     @Column({type:"text",collation: "utf8_general_ci"})
     Tieude: string;
