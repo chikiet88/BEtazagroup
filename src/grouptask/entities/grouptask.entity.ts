@@ -8,6 +8,8 @@ import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeor
 export class GrouptaskEntity {
     @PrimaryGeneratedColumn("uuid")
     id: string;
+    @Column({collation: "utf8_general_ci"})
+    pid : string;
     @Column({type:"text",collation: "utf8_general_ci"})
     Tieude: string;
     @Column({type:"text",collation: "utf8_general_ci"})
