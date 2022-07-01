@@ -19,7 +19,6 @@ import { BaivietModule } from './baiviet/baiviet.module';
 import { DanhmucModule } from './danhmuc/danhmuc.module';
 import { GoalsModule } from './goals/goals.module';
 import { TasksModule } from './tasks/tasks.module';
-import { SectionModule } from './section/section.module';
 import { ProjectModule } from './project/project.module';
 import { GrouptaskModule } from './grouptask/grouptask.module';
 import { ProfileModule } from './profile/profile.module';
@@ -65,7 +64,6 @@ import { TailieunguonModule } from './tailieunguon/tailieunguon.module';
       DanhmucModule,
       GoalsModule,
       TasksModule,
-      SectionModule,
       ProjectModule,
       GrouptaskModule,
       ProfileModule,
