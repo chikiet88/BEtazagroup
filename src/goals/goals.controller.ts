@@ -3,6 +3,13 @@ import { GoalsService } from './goals.service';
 import { CreateGoalDto } from './dto/create-goal.dto';
 import { UpdateGoalDto } from './dto/update-goal.dto';
 
+// const {GoogleAuth} = require('google-auth-library');
+// const {google} = require('googleapis');
+// const auth = new GoogleAuth({scopes: 'https://www.googleapis.com/auth/drive'});
+// const service = google.drive({version: 'v3', auth});
+// console.error(service);
+// console.error(auth);
+
 @Controller('goals')
 export class GoalsController {
   constructor(private readonly goalsService: GoalsService) {}
