@@ -24,6 +24,7 @@ import { GrouptaskModule } from './grouptask/grouptask.module';
 import { ProfileModule } from './profile/profile.module';
 import { UploadModule } from './upload/upload.module';
 import { TailieunguonModule } from './tailieunguon/tailieunguon.module';
+import { CommentModule } from './comment/comment.module';
 @Module({
   imports:
     [
@@ -69,6 +70,7 @@ import { TailieunguonModule } from './tailieunguon/tailieunguon.module';
       ProfileModule,
       UploadModule,
       TailieunguonModule,
+      CommentModule,
     ],
   controllers: [AppController],
   providers: [AppService],
