@@ -5,7 +5,38 @@ import { UpdateUploadDto } from './dto/update-upload.dto';
 import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
 import { extname } from 'path';
 import { diskStorage } from 'multer';
+import {google} from "googleapis";
 const fs = require('fs')
+const auth = new google.auth.GoogleAuth({
+  keyFilename: 'PATH_TO_SERVICE_ACCOUNT_KEY.json',
+    // Scopes can be specified either as an array or as a single, space-delimited string.
+  scopes: ['https://www.googleapis.com/auth/documents']
+});
+const driveService = google.drive({version: 'v3', auth});
+let fileMetadata = {
+  'name': 'icon.png',
+  'parents':  [  '10krlloIS2i_2u_ewkdv3_1NqcpmWSL1w'  ]
+};
+
+let media = {
+  mimeType: 'image/jpeg',
+  body: fs.createReadStream('icon.png')
+};
+let response = driveService.files.create({
+  resource: fileMetadata,
+  media: media,
+  fields: 'id'
+});
+switch(response.status){
+  case 200:
+      let file = response.result;
+      console.log('Created File Id: ', response.data.id);
+      break;
+  default:
+      console.error('Error creating the file, ' + response.errors);
+      break;
+}
+
 export const imageFileFilter = (req, file, callback) => {
   if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
     return callback(new Error('Only image files are allowed!'), false);
