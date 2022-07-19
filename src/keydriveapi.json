@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "tazagroup",
+  "private_key_id": "12f048d643a87e80e88debc04d14951096f37e9a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDNkhdjeAO4IJYn\ncK4XcahG+zM5LgC42xiFunNSmsccJlegMzANEluCeTg6r9sCZzmaSUs7JniuLh5e\nSM9UEloQET+zEkF2CBBWaTDAhSIGPKXQt+jLgd139tknx2UL+8CMUU394L4x2jO9\nM52QeMlrPGXW9XuwPAcYHPXfixdh4SbiudFOfI5BR0imhkKIHsxb2JIgHQlk5pmQ\nb/5PtFtakG+OCpKNN/V7IPThpZhP9IA9bQbg3n5Z4o8XEsMDwI3JRPYYf/umL6gY\nbsCycc9FkrKmjXs/gqhzX0jDjzn7J7+zac8A7+C+I8sOdIk9bP+alVVcegOG+A2+\nTZzA7Jo5AgMBAAECggEABtXVWYE5dW8+8uWGImEs+Fw8qClxjHP7iSHJmRzsozDa\nr8jX741VVd2oOxpTEM3EHm9StS8qqtb9e0LWQvw/uqJKMQ75tn4e5fKmNHaQyq6M\nUGf3EYI6ThV7A723bEo1DS1cZ6VICbIQz5kWY4ICp4JI/BhqQhJC5aA75DCUqNRT\njMBdXBsyAH8xLevU/GhbAYmayKnDXDbO86jxtyHAFiZYWC2M0kBwJC3qpa4kp5dl\nM+MK66IpQaLmPh0BGtS9+eE97BFxDtBPdJT02Qv10Do3y2OShfwohdDoEmRAkPUD\naz/IDi4OLYFG/aXnFzpXzlUWmBB4Vl3dEZYXoq49UQKBgQD0J1mqPdG2tMXpJ6pU\nR6o0r/AMRlFraQLBD0h8IzHJWue+G7old2HF5zR63WkvbUmkeGvx7R5esdq288q+\naIm8fl73ujmNFk8ihQ2onpHGnnN3Cz0dYfGu6ibTVaqXWbyrP3MKthG4CTDfL+Vv\nkjIaBCrHFnutx/Dk3KhxyIaTkQKBgQDXi3+frLsZm5ufmJXlJf9UcUJIWUiCMDTx\n7XeGoQ12efZCR6rPpL97JYvIb8hcSaVgOPw6qB08+fBVXkU/DnLx7+4MqgkI3oPQ\nfth5mVahQ7eKexixNasc3uKf5Fx/XMlxurTXH3YTQouC9I38THKQGfmb5czyZLUj\nViKq24N4KQKBgBXjDSuwvQMG85LyJlfF0OFGQFupVhUt5bxO1W2jbgwh5RJqw+Yl\n7JLkJhU5kftZbbebv/mBCy7r/LJX6n3lOyu1nGfSvuQB8vgiO1Y5WNIYVDuAu2rN\n4++NOAvL6y4EMmCboIF+TtpToJjxXz0AOxOP+hG81zt95/9sNIF2u3GxAoGAbTA2\ne3213hgMssFKFaW0/WLOb/YCnCiteWyRIvsM5dqMnDDP35YWhdyUPfoaZl3MT70u\nUMx+2zfFvokdzP6Vzed8EKBGKV8HKSRIpvi9gL3cCWOoM4T7ZImoBdVZ4g7v4RPy\nrhM67jDEmZcnIgrb8hGmd4nm01eexwLIVwMSS1kCgYBfacoYJbKLjQ++mC9kcsPa\nzkb9zvNRIt6LyD03tk65IMtSpNSL/ltStkUFnqSURObR5WW/8leqJPBuH63I7WWn\nh7hRTnYuZIapKNgRBoSZ7YdNPFX1C825taIXJICiTHfKMX7LR+db8XL6jdcWUOAF\nh7MvBHjRkxq35/UM0K9uuw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "driveapi-40@tazagroup.iam.gserviceaccount.com",
+  "client_id": "115098874665421583548",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/driveapi-40%40tazagroup.iam.gserviceaccount.com"
+}
