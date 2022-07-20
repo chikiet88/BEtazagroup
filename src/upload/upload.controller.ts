@@ -14,16 +14,12 @@ import {
 } from 'googleapis';
 const auth: Auth.GoogleAuth = new google.auth.GoogleAuth({
     keyFile: './src/keydriveapi.json',
-    scopes: ['https://www.googleapis.com/auth/drive.file'],
+    scopes: ['https://www.googleapis.com/auth/drive'],
   });
 const drive: drive_v3.Drive = google.drive({
   version: 'v3',
   auth,
 });
-  
-
-
-
 export const imageFileFilter = (req, file, callback) => {
   if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
     return callback(new Error('Only image files are allowed!'), false);
@@ -80,10 +76,29 @@ export class UploadController {
   }
   @Get('/listfile')
   async listfile() {
-    const listParams: drive_v3.Params$Resource$Files$List = {};
-    const res = await drive.files.list(listParams);
-    const listResults: drive_v3.Schema$FileList = res.data;
-    return listResults
+    // const listParams: drive_v3.Params$Resource$Files$List = {};
+    // const res = await drive.files.list(listParams);
+    // const listResults: drive_v3.Schema$FileList = res.data;
+    // const folder = await drive.files.create({
+    //   requestBody: {
+    //     name: 'Test',
+    //     mimeType: 'application/vnd.google-apps.folder',
+    //     parents:['1g3EsghYdu31gA5FnsholvHVpZkG9UG0r']
+    //   },
+    // });
+    // const res = await drive.files.create({
+    //   requestBody: {
+    //     name: 'Test',
+    //     mimeType: 'text/plain',
+    //     parents:['1g3EsghYdu31gA5FnsholvHVpZkG9UG0r']
+    //   },
+    //   media: {
+    //     mimeType: 'text/plain',
+    //     body: 'Hello World'
+    //   }
+    // });
+
+    // return res.data.id
   }
   @Get(':id')
   findOne(@Param('id') id: string) {
