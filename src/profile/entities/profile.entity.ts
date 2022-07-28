@@ -10,6 +10,22 @@ export class ProfileEntity {
     @Column({ type: "text", collation: "utf8_general_ci" ,nullable: true })
     idUser: string;
     @Column({ type: "text", collation: "utf8_general_ci" ,nullable: true })
+    Hoten: string;
+    @Column({ nullable: true })
+    Ngaysinh: Date;
+    @Column({ default: 0 })
+    CMND: Number;
+    @Column({ type: "text", collation: "utf8_general_ci" ,nullable: true })
+    Nguyenquan: string;
+    @Column({ type: "text", collation: "utf8_general_ci" ,nullable: true })
+    HKTT: string;
+    @Column({ type: "text", collation: "utf8_general_ci" ,nullable: true })
+    Diachi: string;
+    @Column({ type: "text", collation: "utf8_general_ci" ,nullable: true })
+    Facebook: string;
+    @Column({ type: "text", collation: "utf8_general_ci" ,nullable: true })
+    Zalo: string;
+    @Column({ type: "text", collation: "utf8_general_ci" ,nullable: true })
     Congty: string;
     @Column({ type: "text", collation: "utf8_general_ci" ,nullable: true })
     Khoi: string;
@@ -19,20 +35,10 @@ export class ProfileEntity {
     Vitri: string;
     @Column({ type: "text", collation: "utf8_general_ci" ,nullable: true })
     MaNV: string;
-    @Column({ default: 0 })
-    CMND: Number;
     @Column({ nullable: true })
     Ngayvao: Date;
     @Column({ nullable: true })
     Ngaynghi: Date;
-    @Column({ type: "text", collation: "utf8_general_ci" ,nullable: true })
-    Diachi: string;
-    @Column({ type: "text", collation: "utf8_general_ci" ,nullable: true })
-    Facebook: string;
-    @Column({ nullable: true })
-    Ngaysinh: Date;
-    @Column({ type: "text", collation: "utf8_general_ci" ,nullable: true })
-    Zalo: string;
     @Column({ default: 1 })
     Trangthai: number;
     @CreateDateColumn()
